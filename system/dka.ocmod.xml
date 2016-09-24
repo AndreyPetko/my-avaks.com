@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+<name>Tweak for OpenCart 2x Russkaya sborka</name>
+<code>Tweak for OpenCart 2x Russkaya sborka</code>
+<version>2.0.2.0</version>
+<author>Romans</author>
+<link>http://opencart-russia.ru</link>
+
+<file path="admin/controller/common/menu.php">
+	<operation>
+		<search><![CDATA[
+		return $this->load->view('common/menu.tpl', $data);
+		]]></search>
+		<add position="before"><![CDATA[
+		
+		$data['extensions_module'] = array();
+
+		$files = glob(DIR_APPLICATION . 'controller/module/*.php');
+
+		if ($files) {
+			foreach ($files as $file) {
+				$extension = basename($file, '.php');
+
+				$this->load->language('module/' . $extension);
+
+				$data['extensions_module'][] = array(
+					'name'      => $this->language->get('heading_title'),
+					'edit'      => $this->url->link('module/' . $extension, 'token=' . $this->session->data['token'], 'SSL')
+				);
+			}
+		}
+		
+		
+		$data['extensions_payment'] = array();
+
+		$files = glob(DIR_APPLICATION . 'controller/payment/*.php');
+
+		if ($files) {
+			foreach ($files as $file) {
+				$extension = basename($file, '.php');
+
+				$this->load->language('payment/' . $extension);
+
+				$data['extensions_payment'][] = array(
+					'name'       => $this->language->get('heading_title'),
+					'edit'      => $this->url->link('payment/' . $extension . '', 'token=' . $this->session->data['token'], 'SSL')
+				);
+			}
+		}
+		
+		$dka = array();
+		foreach ($data['extensions_module'] as $key => $row)
+		{
+			if (strpos($row['name'],'DKA') !== false) {
+				$dka[] = array(
+					'name' => $row['name'],
+					'edit' => $row['edit']
+				);	
+			}	
+		}
+		
+		foreach ($data['extensions_payment'] as $key => $row)
+		{
+			if (strpos($row['name'],'DKA') !== false) {
+				$dka[] = array(
+					'name' => $row['name'],
+					'edit' => $row['edit']
+				);
+			}
+		}
+		$data['dka'] = $dka;
+		//echo '<br /><pre>',print_r($dka,1),'</pre><br />';
+		]]></add>
+	</operation>
+</file>
+
+<!-- Расширяем колонку меню для русских слов и подключаем translit.js-->
+<file path="admin/view/template/common/menu.tpl">
+	<operation>
+		<search><![CDATA[
+		<li id="reports">
+		]]></search>
+		<add position="before"><![CDATA[
+			<li id="dka_menu"><a class="parent"><i class="fa fa-th-large"></i> <span>DKA - Модули</span></a>
+  				<ul>
+  				<?php for($i = 0; $i < count($dka); $i++)
+  				{
+				  echo "<li><a href='".$dka[$i]["edit"]."'>".$dka[$i]["name"]."</a></li>";
+				}
+				?>				  
+				</ul>
+   			</li>
+		]]></add>
+	</operation>
+</file>
+
+
+
+
+
+</modification>

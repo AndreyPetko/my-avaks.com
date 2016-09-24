@@ -1,0 +1,2591 @@
+2016-05-17 9:25:32 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/controller/common/menu.php
+CODE: return $this->load->view('common/menu.tpl', $data);
+LINE: 269
+FILE: admin/view/template/common/menu.tpl
+CODE: <li id="reports">
+LINE: 178
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 35
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 18
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 80
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 83
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 86
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 116
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 122
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 162
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 108
+CODE: <li><a href="<?php echo $analytics; ?>"><?php echo $text_analytics; ?></a></li>
+LINE: 26
+CODE: <li><a href="<?php echo $total; ?>"><?php echo $text_total; ?></a></li>
+LINE: 37
+FILE: admin/model/catalog/category.php
+CODE: if (isset($data['keyword'])) {
+LINE: 49
+FILE: admin/controller/tool/backup.php
+CODE: $data['entry_backup'] = $this->language->get('entry_backup');
+LINE: 38
+FILE: admin/view/template/design/banner_form.tpl
+CODE: html += '  <td class="text-right" style="width: 10%;><input type="text" name="banner_image[' + image_row + '][sort_order]" value="" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>';
+LINE: 106
+----------------------------------------------------------------
+MOD: Advance News System
+FILE: catalog/controller/common/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 37
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 61
+CODE: if (($data['route'] == 'product/product' && $key == 'product_id') || (($data['route'] == 'product/manufacturer/info' || $data['route'] == 'product/product') && $key == 'manufacturer_id') || ($data['route'] == 'information/information' && $key == 'information_id')) {
+LINE: 115
+CODE: if ($query->row['query'] && $url[0] != 'information_id' && $url[0] != 'manufacturer_id' && $url[0] != 'category_id' && $url[0] != 'product_id') {
+LINE: 41
+CODE: $data['feed'] = $this->url->link('extension/feed', 'token=' . $this->session->data['token'], 'SSL');
+LINE: 132
+CODE: <li><a href="<?php echo $information; ?>"><?php echo $text_information; ?></a></li>
+LINE: 22
+FILE: admin/controller/common/dashboard.php
+CODE: function index()
+LINE: 7
+FILE: admin/view/template/common/dashboard.tpl
+CODE: <?php if ($error_install) { ?>
+LINE: 24
+----------------------------------------------------------------
+MOD: CKEditor 4.4.6 + KCFinder 3.12
+FILE: admin/controller/catalog/product.php
+CODE: public function add() {
+LINE: 15
+CODE: public function edit() {
+LINE: 68
+CODE: <div id="content">
+LINE: 2
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({height: 300});
+LINE: 934
+----------------------------------------------------------------
+MOD: Coloring Theme Modification
+FILE: catalog/controller/common/home.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 167
+FILE: catalog/controller/common/column_left.php
+CODE: $this->load->model('design/layout');
+LINE: 18
+FILE: catalog/controller/common/column_right.php
+CODE: $this->load->model('design/layout');
+LINE: 17
+FILE: catalog/controller/common/search.php
+CODE: $this->load->language('common/search');
+LINE: 26
+FILE: catalog/controller/common/header.php
+CODE: $this->load->language('common/header');
+LINE: 203
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), $this->model_account_wishlist->getTotalWishlist());
+LINE: 214
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 219
+CODE: 'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+LINE: 288
+CODE: foreach ($children as $child) {
+LINE: 295
+CODE: $children_data[] = array(
+LINE: 305
+FILE: catalog/controller/common/cart.php
+CODE: $data['text_items'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));
+LINE: 49
+FILE: catalog/controller/common/footer.php
+CODE: $this->load->language('common/footer');
+LINE: 44
+CODE: $data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
+LINE: 88
+FILE: catalog/controller/product/product.php
+CODE: $data['images'][] = array(
+LINE: 305
+CODE: $data['images'] = array();
+LINE: 308
+CODE: $this->load->model('catalog/category');
+LINE: 58
+CODE: $data['text_select'] = $this->language->get('text_select');
+LINE: 292
+CODE: $this->load->model('tool/image');
+LINE: 357
+FILE: catalog/controller/product/category.php
+CODE: $this->load->language('product/category');
+LINE: 6
+CODE: 'rating'      => $result['rating'],
+LINE: 227
+CODE: $data['categories'][] = array(
+LINE: 166
+CODE: $data['products'][] = array(
+LINE: 221
+CODE: $this->load->model('tool/image');
+LINE: 42
+CODE: 'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.model&order=DESC' . $url)
+LINE: 345
+FILE: catalog/controller/product/search.php
+CODE: $this->load->language('product/search');
+LINE: 6
+CODE: 'rating'      => $result['rating'],
+LINE: 261
+CODE: $data['products'][] = array(
+LINE: 252
+CODE: $this->load->model('tool/image');
+LINE: 32
+CODE: 'href'  => $this->url->link('product/search', 'sort=p.model&order=DESC' . $url)
+LINE: 382
+FILE: catalog/controller/product/special.php
+CODE: $this->load->language('product/special');
+LINE: 6
+CODE: 'rating'      => $result['rating'],
+LINE: 146
+CODE: $data['products'][] = array(
+LINE: 137
+CODE: $this->load->model('tool/image');
+LINE: 30
+CODE: 'href'  => $this->url->link('product/special', 'sort=p.model&order=DESC' . $url)
+LINE: 247
+FILE: catalog/controller/product/manufacturer.php
+CODE: $this->load->language('product/manufacturer');
+LINE: 6
+LINE: 74
+CODE: 'rating'      => $result['rating'],
+LINE: 231
+CODE: $data['products'][] = array(
+LINE: 222
+CODE: $this->load->model('tool/image');
+LINE: 30
+LINE: 120
+CODE: 'href'  => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $this->request->get['manufacturer_id'] . '&sort=p.model&order=DESC' . $url)
+LINE: 352
+FILE: catalog/controller/product/compare.php
+CODE: $json['total'] = sprintf($this->language->get('text_compare'), (isset($this->session->data['compare']) ? count($this->session->data['compare']) : 0));
+LINE: 196
+FILE: catalog/controller/module/carousel.php
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+LINE: 8
+CODE: $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+LINE: 12
+FILE: catalog/controller/module/slideshow.php
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+LINE: 8
+CODE: $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+LINE: 11
+FILE: catalog/controller/module/featured.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 85
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/latest.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 82
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/special.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 82
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/bestseller.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 75
+CODE: $data['products'][] = array(
+LINE: 62
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/banner.php
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+LINE: 8
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.transitions.css');
+LINE: 11
+CODE: $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+LINE: 14
+FILE: catalog/controller/module/filter.php
+CODE: 'name'      => $filter['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : '')
+LINE: 62
+FILE: catalog/controller/account/wishlist.php
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 174
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), $this->model_account_wishlist->getTotalWishlist());
+LINE: 162
+FILE: catalog/controller/account/account.php
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 53
+FILE: catalog/controller/checkout/cart.php
+CODE: $json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));
+LINE: 391
+LINE: 484
+----------------------------------------------------------------
+MOD: Disable empty categories
+CODE: public function getTotalCategoriesByLayoutId($layout_id) {
+LINE: 386
+FILE: admin/view/template/catalog/category_list.tpl
+CODE: <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger" onclick="confirm('<?php echo $text_confirm; ?>') ? $('#form-category').submit() : false;"><i class="fa fa-trash-o"></i></button>
+LINE: 9
+CODE: <?php echo $success; ?>
+LINE: 38
+FILE: admin/controller/catalog/category.php
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 206
+LINE: 291
+CODE: protected function getList() {
+LINE: 142
+FILE: admin/language/russian/catalog/category.php
+CODE: // Text
+LINE: 10
+FILE: admin/language/english/catalog/category.php
+CODE: // Text
+LINE: 10
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: OcStore 2.x track number
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 524
+LINE: 890
+CODE: public function history() {
+LINE: 1499
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 83
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 190
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 98
+CODE: <?php echo $footer; ?>
+LINE: 698
+----------------------------------------------------------------
+MOD: Авторизация через сервис http://loginza.ru
+FILE: catalog/controller/checkout/login.php
+CODE: public function index() {
+LINE: 9
+FILE: catalog/controller/account/login.php
+CODE: public function index() {
+LINE: 11
+FILE: catalog/controller/account/register.php
+CODE: public function index() {
+LINE: 11
+FILE: catalog/view/theme/coloring/template/checkout/login.tpl
+CODE: button-login
+LINE: 45
+FILE: catalog/view/theme/default/template/checkout/login.tpl
+CODE: button-login
+LINE: 45
+FILE: catalog/view/theme/coloring/template/account/login.tpl
+CODE: </form>
+LINE: 65
+FILE: catalog/view/theme/default/template/account/login.tpl
+CODE: </form>
+LINE: 54
+FILE: catalog/view/theme/coloring/template/account/register.tpl
+CODE: already
+LINE: 27
+FILE: catalog/view/theme/default/template/account/register.tpl
+CODE: already
+LINE: 27
+----------------------------------------------------------------
+2016-05-17 9:34:50 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/controller/common/menu.php
+CODE: return $this->load->view('common/menu.tpl', $data);
+LINE: 269
+FILE: admin/view/template/common/menu.tpl
+CODE: <li id="reports">
+LINE: 178
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 35
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 18
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 80
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 83
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 86
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 116
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 122
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 162
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 108
+CODE: <li><a href="<?php echo $analytics; ?>"><?php echo $text_analytics; ?></a></li>
+LINE: 26
+CODE: <li><a href="<?php echo $total; ?>"><?php echo $text_total; ?></a></li>
+LINE: 37
+FILE: admin/model/catalog/category.php
+CODE: if (isset($data['keyword'])) {
+LINE: 49
+FILE: admin/controller/tool/backup.php
+CODE: $data['entry_backup'] = $this->language->get('entry_backup');
+LINE: 38
+FILE: admin/view/template/design/banner_form.tpl
+CODE: html += '  <td class="text-right" style="width: 10%;><input type="text" name="banner_image[' + image_row + '][sort_order]" value="" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>';
+LINE: 106
+----------------------------------------------------------------
+MOD: Advance News System
+FILE: catalog/controller/common/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 37
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 61
+CODE: if (($data['route'] == 'product/product' && $key == 'product_id') || (($data['route'] == 'product/manufacturer/info' || $data['route'] == 'product/product') && $key == 'manufacturer_id') || ($data['route'] == 'information/information' && $key == 'information_id')) {
+LINE: 115
+CODE: if ($query->row['query'] && $url[0] != 'information_id' && $url[0] != 'manufacturer_id' && $url[0] != 'category_id' && $url[0] != 'product_id') {
+LINE: 41
+CODE: $data['feed'] = $this->url->link('extension/feed', 'token=' . $this->session->data['token'], 'SSL');
+LINE: 132
+CODE: <li><a href="<?php echo $information; ?>"><?php echo $text_information; ?></a></li>
+LINE: 22
+FILE: admin/controller/common/dashboard.php
+CODE: function index()
+LINE: 7
+FILE: admin/view/template/common/dashboard.tpl
+CODE: <?php if ($error_install) { ?>
+LINE: 24
+----------------------------------------------------------------
+MOD: CKEditor 4.4.6 + KCFinder 3.12
+FILE: admin/controller/catalog/product.php
+CODE: public function add() {
+LINE: 15
+CODE: public function edit() {
+LINE: 68
+CODE: <div id="content">
+LINE: 2
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({height: 300});
+LINE: 934
+----------------------------------------------------------------
+MOD: Coloring Theme Modification
+FILE: catalog/controller/common/home.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 167
+FILE: catalog/controller/common/column_left.php
+CODE: $this->load->model('design/layout');
+LINE: 18
+FILE: catalog/controller/common/column_right.php
+CODE: $this->load->model('design/layout');
+LINE: 17
+FILE: catalog/controller/common/search.php
+CODE: $this->load->language('common/search');
+LINE: 26
+FILE: catalog/controller/common/header.php
+CODE: $this->load->language('common/header');
+LINE: 203
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), $this->model_account_wishlist->getTotalWishlist());
+LINE: 214
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 219
+CODE: 'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+LINE: 288
+CODE: foreach ($children as $child) {
+LINE: 295
+CODE: $children_data[] = array(
+LINE: 305
+FILE: catalog/controller/common/cart.php
+CODE: $data['text_items'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));
+LINE: 49
+FILE: catalog/controller/common/footer.php
+CODE: $this->load->language('common/footer');
+LINE: 44
+CODE: $data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
+LINE: 88
+FILE: catalog/controller/product/product.php
+CODE: $data['images'][] = array(
+LINE: 305
+CODE: $data['images'] = array();
+LINE: 308
+CODE: $this->load->model('catalog/category');
+LINE: 58
+CODE: $data['text_select'] = $this->language->get('text_select');
+LINE: 292
+CODE: $this->load->model('tool/image');
+LINE: 357
+FILE: catalog/controller/product/category.php
+CODE: $this->load->language('product/category');
+LINE: 6
+CODE: 'rating'      => $result['rating'],
+LINE: 227
+CODE: $data['categories'][] = array(
+LINE: 166
+CODE: $data['products'][] = array(
+LINE: 221
+CODE: $this->load->model('tool/image');
+LINE: 42
+CODE: 'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.model&order=DESC' . $url)
+LINE: 345
+FILE: catalog/controller/product/search.php
+CODE: $this->load->language('product/search');
+LINE: 6
+CODE: 'rating'      => $result['rating'],
+LINE: 261
+CODE: $data['products'][] = array(
+LINE: 252
+CODE: $this->load->model('tool/image');
+LINE: 32
+CODE: 'href'  => $this->url->link('product/search', 'sort=p.model&order=DESC' . $url)
+LINE: 382
+FILE: catalog/controller/product/special.php
+CODE: $this->load->language('product/special');
+LINE: 6
+CODE: 'rating'      => $result['rating'],
+LINE: 146
+CODE: $data['products'][] = array(
+LINE: 137
+CODE: $this->load->model('tool/image');
+LINE: 30
+CODE: 'href'  => $this->url->link('product/special', 'sort=p.model&order=DESC' . $url)
+LINE: 247
+FILE: catalog/controller/product/manufacturer.php
+CODE: $this->load->language('product/manufacturer');
+LINE: 6
+LINE: 74
+CODE: 'rating'      => $result['rating'],
+LINE: 231
+CODE: $data['products'][] = array(
+LINE: 222
+CODE: $this->load->model('tool/image');
+LINE: 30
+LINE: 120
+CODE: 'href'  => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $this->request->get['manufacturer_id'] . '&sort=p.model&order=DESC' . $url)
+LINE: 352
+FILE: catalog/controller/product/compare.php
+CODE: $json['total'] = sprintf($this->language->get('text_compare'), (isset($this->session->data['compare']) ? count($this->session->data['compare']) : 0));
+LINE: 196
+FILE: catalog/controller/module/carousel.php
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+LINE: 8
+CODE: $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+LINE: 12
+FILE: catalog/controller/module/slideshow.php
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+LINE: 8
+CODE: $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+LINE: 11
+FILE: catalog/controller/module/featured.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 85
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/latest.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 82
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/special.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 82
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/bestseller.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 75
+CODE: $data['products'][] = array(
+LINE: 62
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/banner.php
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+LINE: 8
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.transitions.css');
+LINE: 11
+CODE: $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+LINE: 14
+FILE: catalog/controller/module/filter.php
+CODE: 'name'      => $filter['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : '')
+LINE: 62
+FILE: catalog/controller/account/wishlist.php
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 174
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), $this->model_account_wishlist->getTotalWishlist());
+LINE: 162
+FILE: catalog/controller/account/account.php
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 53
+FILE: catalog/controller/checkout/cart.php
+CODE: $json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));
+LINE: 391
+LINE: 484
+----------------------------------------------------------------
+MOD: Disable empty categories
+CODE: public function getTotalCategoriesByLayoutId($layout_id) {
+LINE: 386
+FILE: admin/view/template/catalog/category_list.tpl
+CODE: <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger" onclick="confirm('<?php echo $text_confirm; ?>') ? $('#form-category').submit() : false;"><i class="fa fa-trash-o"></i></button>
+LINE: 9
+CODE: <?php echo $success; ?>
+LINE: 38
+FILE: admin/controller/catalog/category.php
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 206
+LINE: 291
+CODE: protected function getList() {
+LINE: 142
+FILE: admin/language/russian/catalog/category.php
+CODE: // Text
+LINE: 10
+FILE: admin/language/english/catalog/category.php
+CODE: // Text
+LINE: 10
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: OcStore 2.x track number
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 524
+LINE: 890
+CODE: public function history() {
+LINE: 1499
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 83
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 190
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 98
+CODE: <?php echo $footer; ?>
+LINE: 698
+----------------------------------------------------------------
+MOD: Авторизация через сервис http://loginza.ru
+FILE: catalog/controller/checkout/login.php
+CODE: public function index() {
+LINE: 9
+FILE: catalog/controller/account/login.php
+CODE: public function index() {
+LINE: 11
+FILE: catalog/controller/account/register.php
+CODE: public function index() {
+LINE: 11
+FILE: catalog/view/theme/coloring/template/checkout/login.tpl
+CODE: button-login
+LINE: 45
+FILE: catalog/view/theme/default/template/checkout/login.tpl
+CODE: button-login
+LINE: 45
+FILE: catalog/view/theme/coloring/template/account/login.tpl
+CODE: </form>
+LINE: 65
+FILE: catalog/view/theme/default/template/account/login.tpl
+CODE: </form>
+LINE: 54
+FILE: catalog/view/theme/coloring/template/account/register.tpl
+CODE: already
+LINE: 27
+FILE: catalog/view/theme/default/template/account/register.tpl
+CODE: already
+LINE: 27
+----------------------------------------------------------------
+2016-05-17 9:34:52 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/controller/common/menu.php
+CODE: return $this->load->view('common/menu.tpl', $data);
+LINE: 269
+FILE: admin/view/template/common/menu.tpl
+CODE: <li id="reports">
+LINE: 178
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 35
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 18
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 80
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 83
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 86
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 116
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 122
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 162
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 108
+CODE: <li><a href="<?php echo $analytics; ?>"><?php echo $text_analytics; ?></a></li>
+LINE: 26
+CODE: <li><a href="<?php echo $total; ?>"><?php echo $text_total; ?></a></li>
+LINE: 37
+FILE: admin/model/catalog/category.php
+CODE: if (isset($data['keyword'])) {
+LINE: 49
+FILE: admin/controller/tool/backup.php
+CODE: $data['entry_backup'] = $this->language->get('entry_backup');
+LINE: 38
+FILE: admin/view/template/design/banner_form.tpl
+CODE: html += '  <td class="text-right" style="width: 10%;><input type="text" name="banner_image[' + image_row + '][sort_order]" value="" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>';
+LINE: 106
+----------------------------------------------------------------
+MOD: Advance News System
+FILE: catalog/controller/common/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 37
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 61
+CODE: if (($data['route'] == 'product/product' && $key == 'product_id') || (($data['route'] == 'product/manufacturer/info' || $data['route'] == 'product/product') && $key == 'manufacturer_id') || ($data['route'] == 'information/information' && $key == 'information_id')) {
+LINE: 115
+CODE: if ($query->row['query'] && $url[0] != 'information_id' && $url[0] != 'manufacturer_id' && $url[0] != 'category_id' && $url[0] != 'product_id') {
+LINE: 41
+CODE: $data['feed'] = $this->url->link('extension/feed', 'token=' . $this->session->data['token'], 'SSL');
+LINE: 132
+CODE: <li><a href="<?php echo $information; ?>"><?php echo $text_information; ?></a></li>
+LINE: 22
+FILE: admin/controller/common/dashboard.php
+CODE: function index()
+LINE: 7
+FILE: admin/view/template/common/dashboard.tpl
+CODE: <?php if ($error_install) { ?>
+LINE: 24
+----------------------------------------------------------------
+MOD: CKEditor 4.4.6 + KCFinder 3.12
+FILE: admin/controller/catalog/product.php
+CODE: public function add() {
+LINE: 15
+CODE: public function edit() {
+LINE: 68
+CODE: <div id="content">
+LINE: 2
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({height: 300});
+LINE: 934
+----------------------------------------------------------------
+MOD: Coloring Theme Modification
+FILE: catalog/controller/common/home.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 167
+FILE: catalog/controller/common/column_left.php
+CODE: $this->load->model('design/layout');
+LINE: 18
+FILE: catalog/controller/common/column_right.php
+CODE: $this->load->model('design/layout');
+LINE: 17
+FILE: catalog/controller/common/search.php
+CODE: $this->load->language('common/search');
+LINE: 26
+FILE: catalog/controller/common/header.php
+CODE: $this->load->language('common/header');
+LINE: 203
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), $this->model_account_wishlist->getTotalWishlist());
+LINE: 214
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 219
+CODE: 'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+LINE: 288
+CODE: foreach ($children as $child) {
+LINE: 295
+CODE: $children_data[] = array(
+LINE: 305
+FILE: catalog/controller/common/cart.php
+CODE: $data['text_items'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));
+LINE: 49
+FILE: catalog/controller/common/footer.php
+CODE: $this->load->language('common/footer');
+LINE: 44
+CODE: $data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
+LINE: 88
+FILE: catalog/controller/product/product.php
+CODE: $data['images'][] = array(
+LINE: 305
+CODE: $data['images'] = array();
+LINE: 308
+CODE: $this->load->model('catalog/category');
+LINE: 58
+CODE: $data['text_select'] = $this->language->get('text_select');
+LINE: 292
+CODE: $this->load->model('tool/image');
+LINE: 357
+FILE: catalog/controller/product/category.php
+CODE: $this->load->language('product/category');
+LINE: 6
+CODE: 'rating'      => $result['rating'],
+LINE: 227
+CODE: $data['categories'][] = array(
+LINE: 166
+CODE: $data['products'][] = array(
+LINE: 221
+CODE: $this->load->model('tool/image');
+LINE: 42
+CODE: 'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.model&order=DESC' . $url)
+LINE: 345
+FILE: catalog/controller/product/search.php
+CODE: $this->load->language('product/search');
+LINE: 6
+CODE: 'rating'      => $result['rating'],
+LINE: 261
+CODE: $data['products'][] = array(
+LINE: 252
+CODE: $this->load->model('tool/image');
+LINE: 32
+CODE: 'href'  => $this->url->link('product/search', 'sort=p.model&order=DESC' . $url)
+LINE: 382
+FILE: catalog/controller/product/special.php
+CODE: $this->load->language('product/special');
+LINE: 6
+CODE: 'rating'      => $result['rating'],
+LINE: 146
+CODE: $data['products'][] = array(
+LINE: 137
+CODE: $this->load->model('tool/image');
+LINE: 30
+CODE: 'href'  => $this->url->link('product/special', 'sort=p.model&order=DESC' . $url)
+LINE: 247
+FILE: catalog/controller/product/manufacturer.php
+CODE: $this->load->language('product/manufacturer');
+LINE: 6
+LINE: 74
+CODE: 'rating'      => $result['rating'],
+LINE: 231
+CODE: $data['products'][] = array(
+LINE: 222
+CODE: $this->load->model('tool/image');
+LINE: 30
+LINE: 120
+CODE: 'href'  => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $this->request->get['manufacturer_id'] . '&sort=p.model&order=DESC' . $url)
+LINE: 352
+FILE: catalog/controller/product/compare.php
+CODE: $json['total'] = sprintf($this->language->get('text_compare'), (isset($this->session->data['compare']) ? count($this->session->data['compare']) : 0));
+LINE: 196
+FILE: catalog/controller/module/carousel.php
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+LINE: 8
+CODE: $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+LINE: 12
+FILE: catalog/controller/module/slideshow.php
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+LINE: 8
+CODE: $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+LINE: 11
+FILE: catalog/controller/module/featured.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 85
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/latest.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 82
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/special.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 82
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/bestseller.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 75
+CODE: $data['products'][] = array(
+LINE: 62
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/banner.php
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+LINE: 8
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.transitions.css');
+LINE: 11
+CODE: $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+LINE: 14
+FILE: catalog/controller/module/filter.php
+CODE: 'name'      => $filter['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : '')
+LINE: 62
+FILE: catalog/controller/account/wishlist.php
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 174
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), $this->model_account_wishlist->getTotalWishlist());
+LINE: 162
+FILE: catalog/controller/account/account.php
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 53
+FILE: catalog/controller/checkout/cart.php
+CODE: $json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));
+LINE: 391
+LINE: 484
+----------------------------------------------------------------
+MOD: Disable empty categories
+CODE: public function getTotalCategoriesByLayoutId($layout_id) {
+LINE: 386
+FILE: admin/view/template/catalog/category_list.tpl
+CODE: <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger" onclick="confirm('<?php echo $text_confirm; ?>') ? $('#form-category').submit() : false;"><i class="fa fa-trash-o"></i></button>
+LINE: 9
+CODE: <?php echo $success; ?>
+LINE: 38
+FILE: admin/controller/catalog/category.php
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 206
+LINE: 291
+CODE: protected function getList() {
+LINE: 142
+FILE: admin/language/russian/catalog/category.php
+CODE: // Text
+LINE: 10
+FILE: admin/language/english/catalog/category.php
+CODE: // Text
+LINE: 10
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: OcStore 2.x track number
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 524
+LINE: 890
+CODE: public function history() {
+LINE: 1499
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 83
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 190
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 98
+CODE: <?php echo $footer; ?>
+LINE: 698
+----------------------------------------------------------------
+MOD: Авторизация через сервис http://loginza.ru
+FILE: catalog/controller/checkout/login.php
+CODE: public function index() {
+LINE: 9
+FILE: catalog/controller/account/login.php
+CODE: public function index() {
+LINE: 11
+FILE: catalog/controller/account/register.php
+CODE: public function index() {
+LINE: 11
+FILE: catalog/view/theme/coloring/template/checkout/login.tpl
+CODE: button-login
+LINE: 45
+FILE: catalog/view/theme/default/template/checkout/login.tpl
+CODE: button-login
+LINE: 45
+FILE: catalog/view/theme/coloring/template/account/login.tpl
+CODE: </form>
+LINE: 65
+FILE: catalog/view/theme/default/template/account/login.tpl
+CODE: </form>
+LINE: 54
+FILE: catalog/view/theme/coloring/template/account/register.tpl
+CODE: already
+LINE: 27
+FILE: catalog/view/theme/default/template/account/register.tpl
+CODE: already
+LINE: 27
+----------------------------------------------------------------
+2016-05-17 9:34:59 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/controller/common/menu.php
+CODE: return $this->load->view('common/menu.tpl', $data);
+LINE: 269
+FILE: admin/view/template/common/menu.tpl
+CODE: <li id="reports">
+LINE: 178
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 35
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 18
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 80
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 83
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 86
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 116
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 122
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 162
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 108
+CODE: <li><a href="<?php echo $analytics; ?>"><?php echo $text_analytics; ?></a></li>
+LINE: 26
+CODE: <li><a href="<?php echo $total; ?>"><?php echo $text_total; ?></a></li>
+LINE: 37
+FILE: admin/model/catalog/category.php
+CODE: if (isset($data['keyword'])) {
+LINE: 49
+FILE: admin/controller/tool/backup.php
+CODE: $data['entry_backup'] = $this->language->get('entry_backup');
+LINE: 38
+FILE: admin/view/template/design/banner_form.tpl
+CODE: html += '  <td class="text-right" style="width: 10%;><input type="text" name="banner_image[' + image_row + '][sort_order]" value="" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>';
+LINE: 106
+----------------------------------------------------------------
+MOD: Advance News System
+FILE: catalog/controller/common/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 37
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 61
+CODE: if (($data['route'] == 'product/product' && $key == 'product_id') || (($data['route'] == 'product/manufacturer/info' || $data['route'] == 'product/product') && $key == 'manufacturer_id') || ($data['route'] == 'information/information' && $key == 'information_id')) {
+LINE: 115
+CODE: if ($query->row['query'] && $url[0] != 'information_id' && $url[0] != 'manufacturer_id' && $url[0] != 'category_id' && $url[0] != 'product_id') {
+LINE: 41
+CODE: $data['feed'] = $this->url->link('extension/feed', 'token=' . $this->session->data['token'], 'SSL');
+LINE: 132
+CODE: <li><a href="<?php echo $information; ?>"><?php echo $text_information; ?></a></li>
+LINE: 22
+FILE: admin/controller/common/dashboard.php
+CODE: function index()
+LINE: 7
+FILE: admin/view/template/common/dashboard.tpl
+CODE: <?php if ($error_install) { ?>
+LINE: 24
+----------------------------------------------------------------
+MOD: CKEditor 4.4.6 + KCFinder 3.12
+FILE: admin/controller/catalog/product.php
+CODE: public function add() {
+LINE: 15
+CODE: public function edit() {
+LINE: 68
+CODE: <div id="content">
+LINE: 2
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({height: 300});
+LINE: 934
+----------------------------------------------------------------
+MOD: Coloring Theme Modification
+FILE: catalog/controller/common/home.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 167
+FILE: catalog/controller/common/column_left.php
+CODE: $this->load->model('design/layout');
+LINE: 18
+FILE: catalog/controller/common/column_right.php
+CODE: $this->load->model('design/layout');
+LINE: 17
+FILE: catalog/controller/common/search.php
+CODE: $this->load->language('common/search');
+LINE: 26
+FILE: catalog/controller/common/header.php
+CODE: $this->load->language('common/header');
+LINE: 203
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), $this->model_account_wishlist->getTotalWishlist());
+LINE: 214
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 219
+CODE: 'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+LINE: 288
+CODE: foreach ($children as $child) {
+LINE: 295
+CODE: $children_data[] = array(
+LINE: 305
+FILE: catalog/controller/common/cart.php
+CODE: $data['text_items'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));
+LINE: 49
+FILE: catalog/controller/common/footer.php
+CODE: $this->load->language('common/footer');
+LINE: 44
+CODE: $data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
+LINE: 88
+FILE: catalog/controller/product/product.php
+CODE: $data['images'][] = array(
+LINE: 305
+CODE: $data['images'] = array();
+LINE: 308
+CODE: $this->load->model('catalog/category');
+LINE: 58
+CODE: $data['text_select'] = $this->language->get('text_select');
+LINE: 292
+CODE: $this->load->model('tool/image');
+LINE: 357
+FILE: catalog/controller/product/category.php
+CODE: $this->load->language('product/category');
+LINE: 6
+CODE: 'rating'      => $result['rating'],
+LINE: 227
+CODE: $data['categories'][] = array(
+LINE: 166
+CODE: $data['products'][] = array(
+LINE: 221
+CODE: $this->load->model('tool/image');
+LINE: 42
+CODE: 'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.model&order=DESC' . $url)
+LINE: 345
+FILE: catalog/controller/product/search.php
+CODE: $this->load->language('product/search');
+LINE: 6
+CODE: 'rating'      => $result['rating'],
+LINE: 261
+CODE: $data['products'][] = array(
+LINE: 252
+CODE: $this->load->model('tool/image');
+LINE: 32
+CODE: 'href'  => $this->url->link('product/search', 'sort=p.model&order=DESC' . $url)
+LINE: 382
+FILE: catalog/controller/product/special.php
+CODE: $this->load->language('product/special');
+LINE: 6
+CODE: 'rating'      => $result['rating'],
+LINE: 146
+CODE: $data['products'][] = array(
+LINE: 137
+CODE: $this->load->model('tool/image');
+LINE: 30
+CODE: 'href'  => $this->url->link('product/special', 'sort=p.model&order=DESC' . $url)
+LINE: 247
+FILE: catalog/controller/product/manufacturer.php
+CODE: $this->load->language('product/manufacturer');
+LINE: 6
+LINE: 74
+CODE: 'rating'      => $result['rating'],
+LINE: 231
+CODE: $data['products'][] = array(
+LINE: 222
+CODE: $this->load->model('tool/image');
+LINE: 30
+LINE: 120
+CODE: 'href'  => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $this->request->get['manufacturer_id'] . '&sort=p.model&order=DESC' . $url)
+LINE: 352
+FILE: catalog/controller/product/compare.php
+CODE: $json['total'] = sprintf($this->language->get('text_compare'), (isset($this->session->data['compare']) ? count($this->session->data['compare']) : 0));
+LINE: 196
+FILE: catalog/controller/module/carousel.php
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+LINE: 8
+CODE: $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+LINE: 12
+FILE: catalog/controller/module/slideshow.php
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+LINE: 8
+CODE: $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+LINE: 11
+FILE: catalog/controller/module/featured.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 85
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/latest.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 82
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/special.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 82
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/bestseller.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 75
+CODE: $data['products'][] = array(
+LINE: 62
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/banner.php
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+LINE: 8
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.transitions.css');
+LINE: 11
+CODE: $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+LINE: 14
+FILE: catalog/controller/module/filter.php
+CODE: 'name'      => $filter['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : '')
+LINE: 62
+FILE: catalog/controller/account/wishlist.php
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 174
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), $this->model_account_wishlist->getTotalWishlist());
+LINE: 162
+FILE: catalog/controller/account/account.php
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 53
+FILE: catalog/controller/checkout/cart.php
+CODE: $json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));
+LINE: 391
+LINE: 484
+----------------------------------------------------------------
+MOD: Disable empty categories
+CODE: public function getTotalCategoriesByLayoutId($layout_id) {
+LINE: 386
+FILE: admin/view/template/catalog/category_list.tpl
+CODE: <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger" onclick="confirm('<?php echo $text_confirm; ?>') ? $('#form-category').submit() : false;"><i class="fa fa-trash-o"></i></button>
+LINE: 9
+CODE: <?php echo $success; ?>
+LINE: 38
+FILE: admin/controller/catalog/category.php
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 206
+LINE: 291
+CODE: protected function getList() {
+LINE: 142
+FILE: admin/language/russian/catalog/category.php
+CODE: // Text
+LINE: 10
+FILE: admin/language/english/catalog/category.php
+CODE: // Text
+LINE: 10
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: OcStore 2.x track number
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 524
+LINE: 890
+CODE: public function history() {
+LINE: 1499
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 83
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 190
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 98
+CODE: <?php echo $footer; ?>
+LINE: 698
+----------------------------------------------------------------
+MOD: Авторизация через сервис http://loginza.ru
+FILE: catalog/controller/checkout/login.php
+CODE: public function index() {
+LINE: 9
+FILE: catalog/controller/account/login.php
+CODE: public function index() {
+LINE: 11
+FILE: catalog/controller/account/register.php
+CODE: public function index() {
+LINE: 11
+FILE: catalog/view/theme/coloring/template/checkout/login.tpl
+CODE: button-login
+LINE: 45
+FILE: catalog/view/theme/default/template/checkout/login.tpl
+CODE: button-login
+LINE: 45
+FILE: catalog/view/theme/coloring/template/account/login.tpl
+CODE: </form>
+LINE: 65
+FILE: catalog/view/theme/default/template/account/login.tpl
+CODE: </form>
+LINE: 54
+FILE: catalog/view/theme/coloring/template/account/register.tpl
+CODE: already
+LINE: 27
+FILE: catalog/view/theme/default/template/account/register.tpl
+CODE: already
+LINE: 27
+----------------------------------------------------------------
+2016-05-17 10:12:56 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/controller/common/menu.php
+CODE: return $this->load->view('common/menu.tpl', $data);
+LINE: 269
+FILE: admin/view/template/common/menu.tpl
+CODE: <li id="reports">
+LINE: 178
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 35
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 18
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 80
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 83
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 86
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 116
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 122
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 162
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 108
+CODE: <li><a href="<?php echo $analytics; ?>"><?php echo $text_analytics; ?></a></li>
+LINE: 26
+CODE: <li><a href="<?php echo $total; ?>"><?php echo $text_total; ?></a></li>
+LINE: 37
+FILE: admin/model/catalog/category.php
+CODE: if (isset($data['keyword'])) {
+LINE: 49
+FILE: admin/controller/tool/backup.php
+CODE: $data['entry_backup'] = $this->language->get('entry_backup');
+LINE: 38
+FILE: admin/view/template/design/banner_form.tpl
+CODE: html += '  <td class="text-right" style="width: 10%;><input type="text" name="banner_image[' + image_row + '][sort_order]" value="" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>';
+LINE: 106
+----------------------------------------------------------------
+MOD: Advance News System
+FILE: catalog/controller/common/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 37
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 61
+CODE: if (($data['route'] == 'product/product' && $key == 'product_id') || (($data['route'] == 'product/manufacturer/info' || $data['route'] == 'product/product') && $key == 'manufacturer_id') || ($data['route'] == 'information/information' && $key == 'information_id')) {
+LINE: 115
+CODE: if ($query->row['query'] && $url[0] != 'information_id' && $url[0] != 'manufacturer_id' && $url[0] != 'category_id' && $url[0] != 'product_id') {
+LINE: 41
+CODE: $data['feed'] = $this->url->link('extension/feed', 'token=' . $this->session->data['token'], 'SSL');
+LINE: 132
+CODE: <li><a href="<?php echo $information; ?>"><?php echo $text_information; ?></a></li>
+LINE: 22
+FILE: admin/controller/common/dashboard.php
+CODE: function index()
+LINE: 7
+FILE: admin/view/template/common/dashboard.tpl
+CODE: <?php if ($error_install) { ?>
+LINE: 24
+----------------------------------------------------------------
+MOD: Coloring Theme Modification
+FILE: catalog/controller/common/home.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 167
+FILE: catalog/controller/common/column_left.php
+CODE: $this->load->model('design/layout');
+LINE: 18
+FILE: catalog/controller/common/column_right.php
+CODE: $this->load->model('design/layout');
+LINE: 17
+FILE: catalog/controller/common/search.php
+CODE: $this->load->language('common/search');
+LINE: 26
+FILE: catalog/controller/common/header.php
+CODE: $this->load->language('common/header');
+LINE: 203
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), $this->model_account_wishlist->getTotalWishlist());
+LINE: 214
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 219
+CODE: 'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+LINE: 288
+CODE: foreach ($children as $child) {
+LINE: 295
+CODE: $children_data[] = array(
+LINE: 305
+FILE: catalog/controller/common/cart.php
+CODE: $data['text_items'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));
+LINE: 49
+FILE: catalog/controller/common/footer.php
+CODE: $this->load->language('common/footer');
+LINE: 44
+CODE: $data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
+LINE: 88
+FILE: catalog/controller/product/product.php
+CODE: $data['images'][] = array(
+LINE: 305
+CODE: $data['images'] = array();
+LINE: 308
+CODE: $this->load->model('catalog/category');
+LINE: 58
+CODE: $data['text_select'] = $this->language->get('text_select');
+LINE: 292
+CODE: $this->load->model('tool/image');
+LINE: 357
+FILE: catalog/controller/product/category.php
+CODE: $this->load->language('product/category');
+LINE: 6
+CODE: 'rating'      => $result['rating'],
+LINE: 227
+CODE: $data['categories'][] = array(
+LINE: 166
+CODE: $data['products'][] = array(
+LINE: 221
+CODE: $this->load->model('tool/image');
+LINE: 42
+CODE: 'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.model&order=DESC' . $url)
+LINE: 345
+FILE: catalog/controller/product/search.php
+CODE: $this->load->language('product/search');
+LINE: 6
+CODE: 'rating'      => $result['rating'],
+LINE: 261
+CODE: $data['products'][] = array(
+LINE: 252
+CODE: $this->load->model('tool/image');
+LINE: 32
+CODE: 'href'  => $this->url->link('product/search', 'sort=p.model&order=DESC' . $url)
+LINE: 382
+FILE: catalog/controller/product/special.php
+CODE: $this->load->language('product/special');
+LINE: 6
+CODE: 'rating'      => $result['rating'],
+LINE: 146
+CODE: $data['products'][] = array(
+LINE: 137
+CODE: $this->load->model('tool/image');
+LINE: 30
+CODE: 'href'  => $this->url->link('product/special', 'sort=p.model&order=DESC' . $url)
+LINE: 247
+FILE: catalog/controller/product/manufacturer.php
+CODE: $this->load->language('product/manufacturer');
+LINE: 6
+LINE: 74
+CODE: 'rating'      => $result['rating'],
+LINE: 231
+CODE: $data['products'][] = array(
+LINE: 222
+CODE: $this->load->model('tool/image');
+LINE: 30
+LINE: 120
+CODE: 'href'  => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $this->request->get['manufacturer_id'] . '&sort=p.model&order=DESC' . $url)
+LINE: 352
+FILE: catalog/controller/product/compare.php
+CODE: $json['total'] = sprintf($this->language->get('text_compare'), (isset($this->session->data['compare']) ? count($this->session->data['compare']) : 0));
+LINE: 196
+FILE: catalog/controller/module/carousel.php
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+LINE: 8
+CODE: $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+LINE: 12
+FILE: catalog/controller/module/slideshow.php
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+LINE: 8
+CODE: $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+LINE: 11
+FILE: catalog/controller/module/featured.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 85
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/latest.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 82
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/special.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 82
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/bestseller.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 75
+CODE: $data['products'][] = array(
+LINE: 62
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/banner.php
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+LINE: 8
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.transitions.css');
+LINE: 11
+CODE: $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+LINE: 14
+FILE: catalog/controller/module/filter.php
+CODE: 'name'      => $filter['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : '')
+LINE: 62
+FILE: catalog/controller/account/wishlist.php
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 174
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), $this->model_account_wishlist->getTotalWishlist());
+LINE: 162
+FILE: catalog/controller/account/account.php
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 53
+FILE: catalog/controller/checkout/cart.php
+CODE: $json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));
+LINE: 391
+LINE: 484
+----------------------------------------------------------------
+MOD: Disable empty categories
+CODE: public function getTotalCategoriesByLayoutId($layout_id) {
+LINE: 386
+FILE: admin/view/template/catalog/category_list.tpl
+CODE: <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger" onclick="confirm('<?php echo $text_confirm; ?>') ? $('#form-category').submit() : false;"><i class="fa fa-trash-o"></i></button>
+LINE: 9
+CODE: <?php echo $success; ?>
+LINE: 38
+FILE: admin/controller/catalog/category.php
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 206
+LINE: 291
+CODE: protected function getList() {
+LINE: 142
+FILE: admin/language/russian/catalog/category.php
+CODE: // Text
+LINE: 10
+FILE: admin/language/english/catalog/category.php
+CODE: // Text
+LINE: 10
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: OcStore 2.x track number
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 524
+LINE: 890
+CODE: public function history() {
+LINE: 1499
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 83
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 190
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 98
+CODE: <?php echo $footer; ?>
+LINE: 698
+----------------------------------------------------------------
+MOD: Авторизация через сервис http://loginza.ru
+FILE: catalog/controller/checkout/login.php
+CODE: public function index() {
+LINE: 9
+FILE: catalog/controller/account/login.php
+CODE: public function index() {
+LINE: 11
+FILE: catalog/controller/account/register.php
+CODE: public function index() {
+LINE: 11
+FILE: catalog/view/theme/coloring/template/checkout/login.tpl
+CODE: button-login
+LINE: 45
+FILE: catalog/view/theme/default/template/checkout/login.tpl
+CODE: button-login
+LINE: 45
+FILE: catalog/view/theme/coloring/template/account/login.tpl
+CODE: </form>
+LINE: 65
+FILE: catalog/view/theme/default/template/account/login.tpl
+CODE: </form>
+LINE: 54
+FILE: catalog/view/theme/coloring/template/account/register.tpl
+CODE: already
+LINE: 27
+FILE: catalog/view/theme/default/template/account/register.tpl
+CODE: already
+LINE: 27
+----------------------------------------------------------------
+2016-05-17 10:13:06 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/controller/common/menu.php
+CODE: return $this->load->view('common/menu.tpl', $data);
+LINE: 269
+FILE: admin/view/template/common/menu.tpl
+CODE: <li id="reports">
+LINE: 178
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 35
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 18
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 80
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 83
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 86
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 116
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 122
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 162
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 108
+CODE: <li><a href="<?php echo $analytics; ?>"><?php echo $text_analytics; ?></a></li>
+LINE: 26
+CODE: <li><a href="<?php echo $total; ?>"><?php echo $text_total; ?></a></li>
+LINE: 37
+FILE: admin/model/catalog/category.php
+CODE: if (isset($data['keyword'])) {
+LINE: 49
+FILE: admin/controller/tool/backup.php
+CODE: $data['entry_backup'] = $this->language->get('entry_backup');
+LINE: 38
+FILE: admin/view/template/design/banner_form.tpl
+CODE: html += '  <td class="text-right" style="width: 10%;><input type="text" name="banner_image[' + image_row + '][sort_order]" value="" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>';
+LINE: 106
+----------------------------------------------------------------
+MOD: Advance News System
+FILE: catalog/controller/common/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 37
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 61
+CODE: if (($data['route'] == 'product/product' && $key == 'product_id') || (($data['route'] == 'product/manufacturer/info' || $data['route'] == 'product/product') && $key == 'manufacturer_id') || ($data['route'] == 'information/information' && $key == 'information_id')) {
+LINE: 115
+CODE: if ($query->row['query'] && $url[0] != 'information_id' && $url[0] != 'manufacturer_id' && $url[0] != 'category_id' && $url[0] != 'product_id') {
+LINE: 41
+CODE: $data['feed'] = $this->url->link('extension/feed', 'token=' . $this->session->data['token'], 'SSL');
+LINE: 132
+CODE: <li><a href="<?php echo $information; ?>"><?php echo $text_information; ?></a></li>
+LINE: 22
+FILE: admin/controller/common/dashboard.php
+CODE: function index()
+LINE: 7
+FILE: admin/view/template/common/dashboard.tpl
+CODE: <?php if ($error_install) { ?>
+LINE: 24
+----------------------------------------------------------------
+MOD: CKEditor 4.4.6 + KCFinder 3.12
+FILE: admin/controller/catalog/product.php
+CODE: public function add() {
+LINE: 15
+CODE: public function edit() {
+LINE: 68
+CODE: <div id="content">
+LINE: 2
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({height: 300});
+LINE: 934
+----------------------------------------------------------------
+MOD: Coloring Theme Modification
+FILE: catalog/controller/common/home.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 167
+FILE: catalog/controller/common/column_left.php
+CODE: $this->load->model('design/layout');
+LINE: 18
+FILE: catalog/controller/common/column_right.php
+CODE: $this->load->model('design/layout');
+LINE: 17
+FILE: catalog/controller/common/search.php
+CODE: $this->load->language('common/search');
+LINE: 26
+FILE: catalog/controller/common/header.php
+CODE: $this->load->language('common/header');
+LINE: 203
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), $this->model_account_wishlist->getTotalWishlist());
+LINE: 214
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 219
+CODE: 'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+LINE: 288
+CODE: foreach ($children as $child) {
+LINE: 295
+CODE: $children_data[] = array(
+LINE: 305
+FILE: catalog/controller/common/cart.php
+CODE: $data['text_items'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));
+LINE: 49
+FILE: catalog/controller/common/footer.php
+CODE: $this->load->language('common/footer');
+LINE: 44
+CODE: $data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
+LINE: 88
+FILE: catalog/controller/product/product.php
+CODE: $data['images'][] = array(
+LINE: 305
+CODE: $data['images'] = array();
+LINE: 308
+CODE: $this->load->model('catalog/category');
+LINE: 58
+CODE: $data['text_select'] = $this->language->get('text_select');
+LINE: 292
+CODE: $this->load->model('tool/image');
+LINE: 357
+FILE: catalog/controller/product/category.php
+CODE: $this->load->language('product/category');
+LINE: 6
+CODE: 'rating'      => $result['rating'],
+LINE: 227
+CODE: $data['categories'][] = array(
+LINE: 166
+CODE: $data['products'][] = array(
+LINE: 221
+CODE: $this->load->model('tool/image');
+LINE: 42
+CODE: 'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.model&order=DESC' . $url)
+LINE: 345
+FILE: catalog/controller/product/search.php
+CODE: $this->load->language('product/search');
+LINE: 6
+CODE: 'rating'      => $result['rating'],
+LINE: 261
+CODE: $data['products'][] = array(
+LINE: 252
+CODE: $this->load->model('tool/image');
+LINE: 32
+CODE: 'href'  => $this->url->link('product/search', 'sort=p.model&order=DESC' . $url)
+LINE: 382
+FILE: catalog/controller/product/special.php
+CODE: $this->load->language('product/special');
+LINE: 6
+CODE: 'rating'      => $result['rating'],
+LINE: 146
+CODE: $data['products'][] = array(
+LINE: 137
+CODE: $this->load->model('tool/image');
+LINE: 30
+CODE: 'href'  => $this->url->link('product/special', 'sort=p.model&order=DESC' . $url)
+LINE: 247
+FILE: catalog/controller/product/manufacturer.php
+CODE: $this->load->language('product/manufacturer');
+LINE: 6
+LINE: 74
+CODE: 'rating'      => $result['rating'],
+LINE: 231
+CODE: $data['products'][] = array(
+LINE: 222
+CODE: $this->load->model('tool/image');
+LINE: 30
+LINE: 120
+CODE: 'href'  => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $this->request->get['manufacturer_id'] . '&sort=p.model&order=DESC' . $url)
+LINE: 352
+FILE: catalog/controller/product/compare.php
+CODE: $json['total'] = sprintf($this->language->get('text_compare'), (isset($this->session->data['compare']) ? count($this->session->data['compare']) : 0));
+LINE: 196
+FILE: catalog/controller/module/carousel.php
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+LINE: 8
+CODE: $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+LINE: 12
+FILE: catalog/controller/module/slideshow.php
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+LINE: 8
+CODE: $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+LINE: 11
+FILE: catalog/controller/module/featured.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 85
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/latest.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 82
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/special.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 82
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/bestseller.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 75
+CODE: $data['products'][] = array(
+LINE: 62
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/banner.php
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+LINE: 8
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.transitions.css');
+LINE: 11
+CODE: $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+LINE: 14
+FILE: catalog/controller/module/filter.php
+CODE: 'name'      => $filter['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : '')
+LINE: 62
+FILE: catalog/controller/account/wishlist.php
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 174
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), $this->model_account_wishlist->getTotalWishlist());
+LINE: 162
+FILE: catalog/controller/account/account.php
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 53
+FILE: catalog/controller/checkout/cart.php
+CODE: $json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));
+LINE: 391
+LINE: 484
+----------------------------------------------------------------
+MOD: Disable empty categories
+CODE: public function getTotalCategoriesByLayoutId($layout_id) {
+LINE: 386
+FILE: admin/view/template/catalog/category_list.tpl
+CODE: <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger" onclick="confirm('<?php echo $text_confirm; ?>') ? $('#form-category').submit() : false;"><i class="fa fa-trash-o"></i></button>
+LINE: 9
+CODE: <?php echo $success; ?>
+LINE: 38
+FILE: admin/controller/catalog/category.php
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 206
+LINE: 291
+CODE: protected function getList() {
+LINE: 142
+FILE: admin/language/russian/catalog/category.php
+CODE: // Text
+LINE: 10
+FILE: admin/language/english/catalog/category.php
+CODE: // Text
+LINE: 10
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: OcStore 2.x track number
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 524
+LINE: 890
+CODE: public function history() {
+LINE: 1499
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 83
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 190
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 98
+CODE: <?php echo $footer; ?>
+LINE: 698
+----------------------------------------------------------------
+MOD: Авторизация через сервис http://loginza.ru
+FILE: catalog/controller/checkout/login.php
+CODE: public function index() {
+LINE: 9
+FILE: catalog/controller/account/login.php
+CODE: public function index() {
+LINE: 11
+FILE: catalog/controller/account/register.php
+CODE: public function index() {
+LINE: 11
+FILE: catalog/view/theme/coloring/template/checkout/login.tpl
+CODE: button-login
+LINE: 45
+FILE: catalog/view/theme/default/template/checkout/login.tpl
+CODE: button-login
+LINE: 45
+FILE: catalog/view/theme/coloring/template/account/login.tpl
+CODE: </form>
+LINE: 65
+FILE: catalog/view/theme/default/template/account/login.tpl
+CODE: </form>
+LINE: 54
+FILE: catalog/view/theme/coloring/template/account/register.tpl
+CODE: already
+LINE: 27
+FILE: catalog/view/theme/default/template/account/register.tpl
+CODE: already
+LINE: 27
+----------------------------------------------------------------
+2016-05-17 10:13:46 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/controller/common/menu.php
+CODE: return $this->load->view('common/menu.tpl', $data);
+LINE: 269
+FILE: admin/view/template/common/menu.tpl
+CODE: <li id="reports">
+LINE: 178
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 35
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 18
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 80
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 83
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 86
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 116
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 122
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 162
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 108
+CODE: <li><a href="<?php echo $analytics; ?>"><?php echo $text_analytics; ?></a></li>
+LINE: 26
+CODE: <li><a href="<?php echo $total; ?>"><?php echo $text_total; ?></a></li>
+LINE: 37
+FILE: admin/model/catalog/category.php
+CODE: if (isset($data['keyword'])) {
+LINE: 49
+FILE: admin/controller/tool/backup.php
+CODE: $data['entry_backup'] = $this->language->get('entry_backup');
+LINE: 38
+FILE: admin/view/template/design/banner_form.tpl
+CODE: html += '  <td class="text-right" style="width: 10%;><input type="text" name="banner_image[' + image_row + '][sort_order]" value="" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>';
+LINE: 106
+----------------------------------------------------------------
+MOD: Advance News System
+FILE: catalog/controller/common/seo_url.php
+CODE: if ($url[0] == 'information_id') {
+LINE: 37
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 61
+CODE: if (($data['route'] == 'product/product' && $key == 'product_id') || (($data['route'] == 'product/manufacturer/info' || $data['route'] == 'product/product') && $key == 'manufacturer_id') || ($data['route'] == 'information/information' && $key == 'information_id')) {
+LINE: 115
+CODE: if ($query->row['query'] && $url[0] != 'information_id' && $url[0] != 'manufacturer_id' && $url[0] != 'category_id' && $url[0] != 'product_id') {
+LINE: 41
+CODE: $data['feed'] = $this->url->link('extension/feed', 'token=' . $this->session->data['token'], 'SSL');
+LINE: 132
+CODE: <li><a href="<?php echo $information; ?>"><?php echo $text_information; ?></a></li>
+LINE: 22
+FILE: admin/controller/common/dashboard.php
+CODE: function index()
+LINE: 7
+FILE: admin/view/template/common/dashboard.tpl
+CODE: <?php if ($error_install) { ?>
+LINE: 24
+----------------------------------------------------------------
+MOD: CKEditor 4.4.6 + KCFinder 3.12
+FILE: admin/controller/catalog/product.php
+CODE: public function add() {
+LINE: 15
+CODE: public function edit() {
+LINE: 68
+CODE: <div id="content">
+LINE: 2
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({height: 300});
+LINE: 934
+----------------------------------------------------------------
+MOD: Coloring Theme Modification
+FILE: catalog/controller/common/home.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 167
+FILE: catalog/controller/common/column_left.php
+CODE: $this->load->model('design/layout');
+LINE: 18
+FILE: catalog/controller/common/column_right.php
+CODE: $this->load->model('design/layout');
+LINE: 17
+FILE: catalog/controller/common/search.php
+CODE: $this->load->language('common/search');
+LINE: 26
+FILE: catalog/controller/common/header.php
+CODE: $this->load->language('common/header');
+LINE: 203
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), $this->model_account_wishlist->getTotalWishlist());
+LINE: 214
+CODE: $data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 219
+CODE: 'name'  => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+LINE: 288
+CODE: foreach ($children as $child) {
+LINE: 295
+CODE: $children_data[] = array(
+LINE: 305
+FILE: catalog/controller/common/cart.php
+CODE: $data['text_items'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));
+LINE: 49
+FILE: catalog/controller/common/footer.php
+CODE: $this->load->language('common/footer');
+LINE: 44
+CODE: $data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
+LINE: 88
+FILE: catalog/controller/product/product.php
+CODE: $data['images'][] = array(
+LINE: 305
+CODE: $data['images'] = array();
+LINE: 308
+CODE: $this->load->model('catalog/category');
+LINE: 58
+CODE: $data['text_select'] = $this->language->get('text_select');
+LINE: 292
+CODE: $this->load->model('tool/image');
+LINE: 357
+FILE: catalog/controller/product/category.php
+CODE: $this->load->language('product/category');
+LINE: 6
+CODE: 'rating'      => $result['rating'],
+LINE: 227
+CODE: $data['categories'][] = array(
+LINE: 166
+CODE: $data['products'][] = array(
+LINE: 221
+CODE: $this->load->model('tool/image');
+LINE: 42
+CODE: 'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '&sort=p.model&order=DESC' . $url)
+LINE: 345
+FILE: catalog/controller/product/search.php
+CODE: $this->load->language('product/search');
+LINE: 6
+CODE: 'rating'      => $result['rating'],
+LINE: 261
+CODE: $data['products'][] = array(
+LINE: 252
+CODE: $this->load->model('tool/image');
+LINE: 32
+CODE: 'href'  => $this->url->link('product/search', 'sort=p.model&order=DESC' . $url)
+LINE: 382
+FILE: catalog/controller/product/special.php
+CODE: $this->load->language('product/special');
+LINE: 6
+CODE: 'rating'      => $result['rating'],
+LINE: 146
+CODE: $data['products'][] = array(
+LINE: 137
+CODE: $this->load->model('tool/image');
+LINE: 30
+CODE: 'href'  => $this->url->link('product/special', 'sort=p.model&order=DESC' . $url)
+LINE: 247
+FILE: catalog/controller/product/manufacturer.php
+CODE: $this->load->language('product/manufacturer');
+LINE: 6
+LINE: 74
+CODE: 'rating'      => $result['rating'],
+LINE: 231
+CODE: $data['products'][] = array(
+LINE: 222
+CODE: $this->load->model('tool/image');
+LINE: 30
+LINE: 120
+CODE: 'href'  => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $this->request->get['manufacturer_id'] . '&sort=p.model&order=DESC' . $url)
+LINE: 352
+FILE: catalog/controller/product/compare.php
+CODE: $json['total'] = sprintf($this->language->get('text_compare'), (isset($this->session->data['compare']) ? count($this->session->data['compare']) : 0));
+LINE: 196
+FILE: catalog/controller/module/carousel.php
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+LINE: 8
+CODE: $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+LINE: 12
+FILE: catalog/controller/module/slideshow.php
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+LINE: 8
+CODE: $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+LINE: 11
+FILE: catalog/controller/module/featured.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 85
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/latest.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 82
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/special.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 82
+CODE: $data['products'][] = array(
+LINE: 69
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/bestseller.php
+CODE: $this->load->model('tool/image');
+LINE: 21
+CODE: if (file_exists(DIR_TEMPLATE
+LINE: 75
+CODE: $data['products'][] = array(
+LINE: 62
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 19
+FILE: catalog/controller/module/banner.php
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.css');
+LINE: 8
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.transitions.css');
+LINE: 11
+CODE: $this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
+LINE: 14
+FILE: catalog/controller/module/filter.php
+CODE: 'name'      => $filter['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : '')
+LINE: 62
+FILE: catalog/controller/account/wishlist.php
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+LINE: 174
+CODE: $json['total'] = sprintf($this->language->get('text_wishlist'), $this->model_account_wishlist->getTotalWishlist());
+LINE: 162
+FILE: catalog/controller/account/account.php
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 53
+FILE: catalog/controller/checkout/cart.php
+CODE: $json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));
+LINE: 391
+LINE: 484
+----------------------------------------------------------------
+MOD: Disable empty categories
+CODE: public function getTotalCategoriesByLayoutId($layout_id) {
+LINE: 386
+FILE: admin/view/template/catalog/category_list.tpl
+CODE: <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger" onclick="confirm('<?php echo $text_confirm; ?>') ? $('#form-category').submit() : false;"><i class="fa fa-trash-o"></i></button>
+LINE: 9
+CODE: <?php echo $success; ?>
+LINE: 38
+FILE: admin/controller/catalog/category.php
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 206
+LINE: 291
+CODE: protected function getList() {
+LINE: 142
+FILE: admin/language/russian/catalog/category.php
+CODE: // Text
+LINE: 10
+FILE: admin/language/english/catalog/category.php
+CODE: // Text
+LINE: 10
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: OcStore 2.x track number
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 524
+LINE: 890
+CODE: public function history() {
+LINE: 1499
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 83
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 190
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 98
+CODE: <?php echo $footer; ?>
+LINE: 698
+----------------------------------------------------------------
+MOD: Авторизация через сервис http://loginza.ru
+FILE: catalog/controller/checkout/login.php
+CODE: public function index() {
+LINE: 9
+FILE: catalog/controller/account/login.php
+CODE: public function index() {
+LINE: 11
+FILE: catalog/controller/account/register.php
+CODE: public function index() {
+LINE: 11
+FILE: catalog/view/theme/coloring/template/checkout/login.tpl
+CODE: button-login
+LINE: 45
+FILE: catalog/view/theme/default/template/checkout/login.tpl
+CODE: button-login
+LINE: 45
+FILE: catalog/view/theme/coloring/template/account/login.tpl
+CODE: </form>
+LINE: 65
+FILE: catalog/view/theme/default/template/account/login.tpl
+CODE: </form>
+LINE: 54
+FILE: catalog/view/theme/coloring/template/account/register.tpl
+CODE: already
+LINE: 27
+FILE: catalog/view/theme/default/template/account/register.tpl
+CODE: already
+LINE: 27
+----------------------------------------------------------------
+2016-06-29 18:23:46 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/controller/common/menu.php
+CODE: return $this->load->view('common/menu.tpl', $data);
+LINE: 269
+FILE: admin/view/template/common/menu.tpl
+CODE: <li id="reports">
+LINE: 178
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 35
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 18
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 80
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 83
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 86
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 116
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 122
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 162
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 108
+CODE: <li><a href="<?php echo $analytics; ?>"><?php echo $text_analytics; ?></a></li>
+LINE: 26
+CODE: <li><a href="<?php echo $total; ?>"><?php echo $text_total; ?></a></li>
+LINE: 37
+FILE: admin/model/catalog/category.php
+CODE: if (isset($data['keyword'])) {
+LINE: 49
+FILE: admin/controller/tool/backup.php
+CODE: $data['entry_backup'] = $this->language->get('entry_backup');
+LINE: 38
+FILE: admin/view/template/design/banner_form.tpl
+CODE: html += '  <td class="text-right" style="width: 10%;><input type="text" name="banner_image[' + image_row + '][sort_order]" value="" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>';
+LINE: 106
+----------------------------------------------------------------
+MOD: Advance News System
+CODE: $data['feed'] = $this->url->link('extension/feed', 'token=' . $this->session->data['token'], 'SSL');
+LINE: 132
+CODE: <li><a href="<?php echo $information; ?>"><?php echo $text_information; ?></a></li>
+LINE: 22
+FILE: admin/controller/common/dashboard.php
+CODE: function index()
+LINE: 7
+FILE: admin/view/template/common/dashboard.tpl
+CODE: <?php if ($error_install) { ?>
+LINE: 24
+----------------------------------------------------------------
+MOD: CKEditor 4.4.6 + KCFinder 3.12
+FILE: admin/controller/catalog/product.php
+CODE: public function add() {
+LINE: 15
+CODE: public function edit() {
+LINE: 68
+CODE: <div id="content">
+LINE: 2
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({height: 300});
+LINE: 934
+----------------------------------------------------------------
+MOD: Coloring Theme Modification
+----------------------------------------------------------------
+MOD: Disable empty categories
+CODE: public function getTotalCategoriesByLayoutId($layout_id) {
+LINE: 386
+FILE: admin/view/template/catalog/category_list.tpl
+CODE: <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger" onclick="confirm('<?php echo $text_confirm; ?>') ? $('#form-category').submit() : false;"><i class="fa fa-trash-o"></i></button>
+LINE: 9
+CODE: <?php echo $success; ?>
+LINE: 38
+FILE: admin/controller/catalog/category.php
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 206
+LINE: 291
+CODE: protected function getList() {
+LINE: 142
+FILE: admin/language/russian/catalog/category.php
+CODE: // Text
+LINE: 10
+FILE: admin/language/english/catalog/category.php
+CODE: // Text
+LINE: 10
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: OcStore 2.x track number
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 524
+LINE: 890
+CODE: public function history() {
+LINE: 1499
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 83
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 98
+CODE: <?php echo $footer; ?>
+LINE: 698
+----------------------------------------------------------------
+MOD: Авторизация через сервис http://loginza.ru
+----------------------------------------------------------------
+2016-06-29 18:24:36 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/controller/common/menu.php
+CODE: return $this->load->view('common/menu.tpl', $data);
+LINE: 269
+FILE: admin/view/template/common/menu.tpl
+CODE: <li id="reports">
+LINE: 178
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 2x Russkaya sborka
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 35
+CODE: <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
+LINE: 18
+CODE: <li><a href="http://www.opencart.com" target="_blank"><?php echo $text_homepage; ?></a></li>
+LINE: 80
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><?php echo $text_documentation; ?></a></li>
+LINE: 83
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li>
+LINE: 86
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="<?php echo $help_sku; ?>"><?php echo $entry_sku; ?></span></label>
+LINE: 116
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 122
+CODE: <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+LINE: 162
+CODE: <input type="text" name="model" value="<?php echo $model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+LINE: 108
+CODE: <li><a href="<?php echo $analytics; ?>"><?php echo $text_analytics; ?></a></li>
+LINE: 26
+CODE: <li><a href="<?php echo $total; ?>"><?php echo $text_total; ?></a></li>
+LINE: 37
+FILE: admin/model/catalog/category.php
+CODE: if (isset($data['keyword'])) {
+LINE: 49
+FILE: admin/controller/tool/backup.php
+CODE: $data['entry_backup'] = $this->language->get('entry_backup');
+LINE: 38
+FILE: admin/view/template/design/banner_form.tpl
+CODE: html += '  <td class="text-right" style="width: 10%;><input type="text" name="banner_image[' + image_row + '][sort_order]" value="" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>';
+LINE: 106
+----------------------------------------------------------------
+MOD: Advance News System
+CODE: $data['feed'] = $this->url->link('extension/feed', 'token=' . $this->session->data['token'], 'SSL');
+LINE: 132
+CODE: <li><a href="<?php echo $information; ?>"><?php echo $text_information; ?></a></li>
+LINE: 22
+FILE: admin/controller/common/dashboard.php
+CODE: function index()
+LINE: 7
+FILE: admin/view/template/common/dashboard.tpl
+CODE: <?php if ($error_install) { ?>
+LINE: 24
+----------------------------------------------------------------
+MOD: CKEditor 4.4.6 + KCFinder 3.12
+FILE: admin/controller/catalog/product.php
+CODE: public function add() {
+LINE: 15
+CODE: public function edit() {
+LINE: 68
+CODE: <div id="content">
+LINE: 2
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({height: 300});
+LINE: 934
+----------------------------------------------------------------
+MOD: Coloring Theme Modification
+----------------------------------------------------------------
+MOD: Disable empty categories
+CODE: public function getTotalCategoriesByLayoutId($layout_id) {
+LINE: 386
+FILE: admin/view/template/catalog/category_list.tpl
+CODE: <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger" onclick="confirm('<?php echo $text_confirm; ?>') ? $('#form-category').submit() : false;"><i class="fa fa-trash-o"></i></button>
+LINE: 9
+CODE: <?php echo $success; ?>
+LINE: 38
+FILE: admin/controller/catalog/category.php
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 206
+LINE: 291
+CODE: protected function getList() {
+LINE: 142
+FILE: admin/language/russian/catalog/category.php
+CODE: // Text
+LINE: 10
+FILE: admin/language/english/catalog/category.php
+CODE: // Text
+LINE: 10
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: OcStore 2.x track number
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 524
+LINE: 890
+CODE: public function history() {
+LINE: 1499
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 83
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 98
+CODE: <?php echo $footer; ?>
+LINE: 698
+----------------------------------------------------------------
+MOD: Авторизация через сервис http://loginza.ru
+----------------------------------------------------------------
