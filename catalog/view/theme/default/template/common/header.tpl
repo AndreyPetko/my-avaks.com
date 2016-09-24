@@ -36,42 +36,42 @@
 		<div id="top-head">
 			<div class="container">
 				<div class="top-social">
-					<a href="" target="_blank">
+					<a href="https://vk.com/avaks503737" target="_blank">
 						<div class="top-social-item">
 							<img src="/catalog/view/theme/default/images/icon-vk-g.png">
 						</div>
 					</a>
-					<a href="" target="_blank">
+					<a href="https://www.facebook.com/avaksshop/" target="_blank">
 						<div class="top-social-item">
 							<img src="/catalog/view/theme/default/images/icon-fb-g.png">
 						</div>
 					</a>
-					<a href="" target="_blank">
+					<a href="https://ok.ru/group/53156864590004?st._aid=ExternalGroupWidget_OpenGroup" target="_blank">
 						<div class="top-social-item">
 							<img src="/catalog/view/theme/default/images/icon-ok-g.png">
 						</div>
 					</a>
-					<a href="" target="_blank">
+					<a href="https://www.instagram.com/avaks_shop/" target="_blank">
 						<div class="top-social-item">
 							<img src="/catalog/view/theme/default/images/icon-insta-g.png">
 						</div>
 					</a>
-					<a href="" target="_blank">
+					<a href="http://my.mail.ru/community/avaks-shop/" target="_blank">
 						<div class="top-social-item">
 							<img src="/catalog/view/theme/default/images/icon-mail-g.png">
 						</div>
 					</a>
-					<a href="" target="_blank">
+					<a href="https://plus.google.com/102836413814359745133" target="_blank">
 						<div class="top-social-item">
 							<img src="/catalog/view/theme/default/images/icon-google-g.png">
 						</div>
 					</a>
-					<a href="" target="_blank">
+					<a href="https://twitter.com/AvaksCompany?ref_src=twsrc%5Etfw" target="_blank">
 						<div class="top-social-item">
 							<img src="/catalog/view/theme/default/images/icon-tw-g.png">
 						</div>
 					</a>
-					<a href="" target="_blank">
+					<a href="https://www.youtube.com/user/avaksofficial" target="_blank">
 						<div class="top-social-item">
 							<img src="/catalog/view/theme/default/images/icon-yout-g.png">
 						</div>
