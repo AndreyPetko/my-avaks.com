@@ -19,6 +19,7 @@
                         <div class="container">
                           <div class="row">
                             <div class="col-md-3">
+                            <?php if($products) { ?>
                               <div id="filter">
                                 <div class="filter-head">
                                   Фильтр
@@ -84,6 +85,7 @@
                                   </div>
                                 </div>
                               </div>
+                              <?php } ?>
                             </div>
                             <div class="col-md-9">
                               <div class="main-title">
@@ -261,7 +263,7 @@
                       $( "#amount" ).val( $( "#slider-range" ).slider( "values", 0 ) + "р - " + $( "#slider-range" ).slider( "values", 1 ) + "р");
                 });
 
-                function updateURLParameter(url, param, paramVal){
+                function updateURLParameter(url, param, paramVal) {
                     var newAdditionalURL = "";
                     var tempArray = url.split("?");
                     var baseURL = tempArray[0];
@@ -282,7 +284,7 @@
                 }
 
 
-              document.addEventListener('DOMContentLoaded', function(){
+              document.addEventListener('DOMContentLoaded', function() {
                 var submit = document.getElementById('filter-submit');
 
                 var clearItems = document.getElementsByClassName('clear-fitler-block');
