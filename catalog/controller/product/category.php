@@ -1,6 +1,8 @@
 <?php
 class ControllerProductCategory extends Controller {
+
 	public function index() {
+
 		$this->load->language('product/category');
 
 		$this->load->model('catalog/category');
@@ -40,11 +42,6 @@ class ControllerProductCategory extends Controller {
 		}
 
 		$data['breadcrumbs'] = array();
-
-		// $data['breadcrumbs'][] = array(
-		// 	'text' => $this->language->get('text_home'),
-		// 	'href' => $this->url->link('common/home')
-		// );
 
 		if (isset($this->request->get['path'])) {
 			$url = '';
@@ -237,7 +234,7 @@ class ControllerProductCategory extends Controller {
 					$data['min_price'] = min($pricesArr);
 					$data['max_price'] = max($pricesArr);
 				}
-				
+
 
 
 			if(!isset($this->request->get['min']) && !isset($this->request->get['max'])) {
@@ -303,6 +300,7 @@ class ControllerProductCategory extends Controller {
 				} else {
 					$rating = false;
 				}
+
 
 				$data['products'][] = array(
 					'product_id'  => $result['product_id'],
@@ -471,6 +469,16 @@ class ControllerProductCategory extends Controller {
 			$pagination->limit = $limit;
 			$pagination->url = $this->url->link('product/category', 'path=' . $this->request->get['path'] . $url . '&page={page}');
 
+
+			// echo "<pre>";
+			// echo $this->request->get['filter'];
+			var_dump($this->request);
+			if (isset($this->request->get['filter'])) {
+				echo $this->request->get['filter'];
+			}
+			// die;
+			// print_r($pagination);
+
 			$data['pagination'] = $pagination->render();
 
 			$data['results'] = sprintf($this->language->get('text_pagination'), ($product_total) ? (($page - 1) * $limit) + 1 : 0, ((($page - 1) * $limit) > ($product_total - $limit)) ? $product_total : ((($page - 1) * $limit) + $limit), $product_total, ceil($product_total / $limit));
@@ -500,7 +508,6 @@ class ControllerProductCategory extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
-
 
 			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/category.tpl')) {
 				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/product/category.tpl', $data));
@@ -557,7 +564,6 @@ class ControllerProductCategory extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
-
 
 			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/error/not_found.tpl')) {
 				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/error/not_found.tpl', $data));
