@@ -35,10 +35,10 @@ class ControllerAccountPassword extends Controller {
 
 		$data['breadcrumbs'] = array();
 
-		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/home')
-		);
+		// $data['breadcrumbs'][] = array(
+		// 	'text' => $this->language->get('text_home'),
+		// 	'href' => $this->url->link('common/home')
+		// );
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_account'),
