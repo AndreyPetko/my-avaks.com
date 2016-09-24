@@ -77,10 +77,10 @@
                                     <img src="/catalog/view/theme/default/images/icon-show-white.png">
                                     Показать
                                   </div>
-                                  <div id="filter-refresh">
+                                  <!-- <div id="filter-refresh">
                                     <img src="/catalog/view/theme/default/images/icon-refresh.png">
                                     Обновить
-                                  </div>
+                                  </div> -->
                                 </div>
                               </div>
                               <?php } ?>
@@ -172,7 +172,7 @@
                         <div class="sort-by">
                           <img src="/catalog/view/theme/default/images/show-icon-blue.jpg">
                           Показать по:
-            
+
                     <select id="input-limit" class="form-control" onchange="location = this.value;">
                       <?php foreach ($limits as $limits) { ?>
                         <?php if ($limits['value'] == $limit) { ?>
