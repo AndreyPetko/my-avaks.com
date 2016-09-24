@@ -19,7 +19,6 @@
                         <div class="container">
                           <div class="row">
                             <div class="col-md-3">
-                            <?php if($products) { ?>
                               <div id="filter">
                                 <div class="filter-head">
                                   Фильтр
@@ -70,7 +69,6 @@
 
                                   </div>
                                   </div>
-                                <?php } ?>
 
 
 

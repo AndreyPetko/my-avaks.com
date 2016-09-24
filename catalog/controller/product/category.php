@@ -261,10 +261,10 @@ class ControllerProductCategory extends Controller {
 				'limit'              => $limit
 				);
 
-			$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
-
 			$filter_data['filter_min_price'] = $data['min_price_current'];
 			$filter_data['filter_max_price'] = $data['max_price_current'];
+
+			$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
 
 
 			$results = $this->model_catalog_product->getProducts($filter_data);
@@ -467,17 +467,23 @@ class ControllerProductCategory extends Controller {
 			$pagination->total = $product_total;
 			$pagination->page = $page;
 			$pagination->limit = $limit;
-			$pagination->url = $this->url->link('product/category', 'path=' . $this->request->get['path'] . $url . '&page={page}');
 
 
-			// echo "<pre>";
-			// echo $this->request->get['filter'];
-			var_dump($this->request);
-			if (isset($this->request->get['filter'])) {
-				echo $this->request->get['filter'];
+			$paginationUrl = 'path=' . $this->request->get['path'] . $url . '&page={page}';
+
+			if(isset($this->request->get['min'])) {
+				$paginationUrl .= '&min=' . $this->request->get['min'];
 			}
-			// die;
-			// print_r($pagination);
+
+			if(isset($this->request->get['max'])) {
+				$paginationUrl .= '&max=' . $this->request->get['max'];
+			}
+
+
+			$pagination->url = $this->url->link('product/category', $paginationUrl);
+
+
+
 
 			$data['pagination'] = $pagination->render();
 
