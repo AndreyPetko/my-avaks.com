@@ -256,6 +256,14 @@ class ControllerCheckoutCart extends Controller {
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
 
+
+
+			if($this->customer->isLogged()) {
+				$data['user']['firstname'] = $this->customer->getFirstname();
+				$data['user']['lastname'] = $this->customer->getLastname();
+				$data['user']['telephone'] = $this->customer->getTelephone();
+			}
+
 			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/cart.tpl')) {
 				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/checkout/cart.tpl', $data));
 			} else {
@@ -494,17 +502,19 @@ class ControllerCheckoutCart extends Controller {
 		$this->load->model('checkout/order');
 
 		$orderTotal = $this->cart->getTotal();
+
+		if($this->customer->isLogged()) {
+			$customerId = $this->customer->getId();
+		} else {
+			$customerId = 0;
+		}
+
+
 		$customerId = 1;
 
 		$this->model_checkout_order->addFastOrder($products, $formData, $orderTotal, $customerId);
 		$this->cart->clear();
 
-		$this->response->redirect($this->url->link('checkout/cart/success'));
-	}
-
-
-	public function success()
-	{
-		echo "1";
+		$this->response->redirect($this->url->link('checkout/success'));
 	}
 }

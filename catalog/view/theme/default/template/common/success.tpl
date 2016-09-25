@@ -2,13 +2,13 @@
 <div class="container">
  <div id="breadcrumps">
     <a href="<?php echo $home; ?>">
-      <img src="images/home-icon-bread.jpg">
+      <img src="/catalog/view/theme/default/images/home-icon-bread.jpg">
       Главная
     </a>
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
 
     <a href="<?php echo $breadcrumb['href']; ?>">
-      <img src="images/breadcr-arrow.jpg">
+      <img src="/catalog/view/theme/default/images/breadcr-arrow.jpg">
       <?php echo $breadcrumb['text']; ?>
     </a>
 

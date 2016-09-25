@@ -111,18 +111,18 @@
 
       <div class="form-group">
         <label for="name">Имя</label>
-        <input type="text" class="form-control" name="firstname" value=""/>
+        <input type="text" class="form-control" name="firstname" value="<?php if(isset($user['lastname'])) echo $user['firstname'] ?>"/>
       </div>
 
       <div class="form-group">
         <label for="name">Фамилия</label>
-        <input type="text" class="form-control" name="lastname" value=""/>
+        <input type="text" class="form-control" name="lastname" value="<?php if(isset($user['lastname'])) echo $user['lastname'] ?>"/>
       </div>
 
 
       <div class="form-group">
         <label for="name">Номер телефона</label>
-        <input type="text" class="form-control" name="telephone" value=""/>
+        <input type="text" class="form-control" name="telephone" value="<?php if(isset($user['lastname'])) echo $user['telephone'] ?>"/>
       </div>
 
 
@@ -136,9 +136,33 @@
         <input type="text" class="form-control" name="address" value=""/>
       </div>
 
+
       <div class="form-group">
-        <label for="name">Комментарий</label>
-        <textarea class="form-control" name="comment"></textarea>
+        <label for="name">Способ оплаты</label>
+        <input type="text" class="form-control" name="payment_method" value=""/>
+      </div>
+
+
+      <div class="form-group">
+        <label for="name">Способ оплаты</label>
+        <select class="form-control" name="payment_method">
+            <option value="Банковская карта">Банковская карта</option>
+            <option value="Яндекс.Деньги">Яндекс.Деньги</option>
+            <option value="Оплата телефоном">Оплата телефоном</option>
+            <option value="WebMoney">WebMoney</option>
+            <option value="AlphaClick">AlphaClick</option>
+            <option value="Сбербанк онлайн">Сбербанк онлайн</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Метод покупки</label>
+        <select class="form-control" name="shipping_method">
+            <option value="Самовывоз из магазина">Самовывоз из магазина</option>
+            <option value="Доставка почтой России">Доставка почтой России</option>
+            <option value="Доставка по городу">Доставка по городу</option>
+            <option value="Доставка с фиксированной стоимостью доставки">Доставка с фиксированной стоимостью доставки</option>
+        </select>
       </div>
 
       <br />

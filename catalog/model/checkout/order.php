@@ -857,11 +857,12 @@ class ModelCheckoutOrder extends Model {
 			", telephone = '" . $formData['telephone'] . "'" . 
 			", payment_city = '" . $formData['city'] . "'" . 
 			", payment_address_1 = '" . $formData['address'] . "'" . 
+			", payment_method = '" . $formData['payment_method'] . "'" . 
+			", shipping_method = '" . $formData['shipping_method'] . "'" . 
 			", order_status_id = 2" . 
 			', date_added = NOW()' .
 			', date_modified = NOW()' 
 		);
-
 
 		$orderId = $this->db->getLastId();
 
@@ -881,6 +882,12 @@ class ModelCheckoutOrder extends Model {
 			", code = 'total' " .
 			", title = 'Итого' " .
 			", value = " . $orderTotal
+		);
+
+		$this->db->query("INSERT INTO oc_order_history SET order_id = " . $orderId . 
+			", order_status_id = 2 " . 
+			", notify = 0 " . 
+			", date_added = NOW() "
 		);
 
 	}
