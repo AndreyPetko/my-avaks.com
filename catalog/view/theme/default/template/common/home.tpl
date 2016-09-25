@@ -50,7 +50,7 @@
 									<div class="catalog-tria"></div>
 								</div>
 							</a>
-							<a href="/index.php?route=product/category&path=163">
+							<a href="http://avaks.tv/index.php?route=product/category&path=164">
 								<div class="category-menu-item-premium">
 									<p>Хиты продаж</p>
 									<div class="category-arrow-premium">
@@ -59,7 +59,7 @@
 									<div class="catalog-tria"></div>
 								</div>
 							</a>
-							<a href="/index.php?route=product/category&path=164">
+							<a href="http://avaks.tv/index.php?route=product/category&path=163">
 								<div class="category-menu-item-premium">
 									<p>Распродажа</p>
 									<div class="category-arrow-premium">
@@ -68,7 +68,7 @@
 									<div class="catalog-tria"></div>
 								</div>
 							</a>
-							<a href="/index.php?route=product/category&path=165">
+							<a href="http://avaks.tv/index.php?route=product/category&path=162">
 								<div class="category-menu-item-premium">
 									<p>Товар дня</p>
 									<div class="category-arrow-premium">
