@@ -327,9 +327,9 @@ var catalogButton = document.getElementById('catalog-button');
 function getIndex() {
 	var ourUrl = window.location.href;
 
-	return	ourUrl == "http://avaks.ap.org.ua/index.php?route=common/home" || 
-	ourUrl == "http://avaks.ap.org.ua/index.php" || 
-	ourUrl == "http://avaks.ap.org.ua/";
+	return	ourUrl == "http://avaks.tv/index.php?route=common/home" || 
+	ourUrl == "http://avaks.tv/index.php" || 
+	ourUrl == "http://avaks.tv/";
 }
 
 
@@ -423,22 +423,22 @@ arrowUp.addEventListener('click', function(){
   if(toWish){
     for(i=0; i < toWish.length; i++){
       toWish[i].addEventListener('click', function(){
-        if(this.src == 'catalog/view/theme/default/images/icon-to-wish-product-g.png'){
-          this.src = 'catalog/view/theme/default/images/icon-to-wish-product-w.png';
+        if(this.src == 'http://avaks.tv/catalog/view/theme/default/images/icon-to-wish-product-g.png'){
+          this.src = 'http://avaks.tv/catalog/view/theme/default/images/icon-to-wish-product-w.png';
         }
         else{
-             this.src = 'catalog/view/theme/default/images/icon-to-wish-product-g.png';
+             this.src = 'http://avaks.tv/catalog/view/theme/default/images/icon-to-wish-product-g.png';
         }
 
       })
     };
      for(i=0; i < toComp.length; i++){
       toComp[i].addEventListener('click', function(){
-        if(this.src == 'catalog/view/theme/default/images/icon-to-comp-product-g.png'){
-          this.src = 'catalog/view/theme/default/images/icon-to-comp-product-w.png';
+        if(this.src == 'http://avaks.tv/catalog/view/theme/default/images/icon-to-comp-product-g.png'){
+          this.src = 'http://avaks.tv/catalog/view/theme/default/images/icon-to-comp-product-w.png';
         }
         else{
-             this.src = 'catalog/view/theme/default/images/icon-to-comp-product-g.png';
+             this.src = 'http://avaks.tv/catalog/view/theme/default/images/icon-to-comp-product-g.png';
         }
 
       })
