@@ -847,4 +847,41 @@ class ModelCheckoutOrder extends Model {
 
 		$this->event->trigger('post.order.history.add', $order_id);
 	}
+
+
+	public function addFastOrder($products, $formData, $orderTotal, $customerId) {
+
+		$this->db->query("INSERT INTO oc_order SET  firstname = '" . $formData['firstname'] . "'" . 
+			", customer_id = " . $customerId .
+			", lastname = '" . $formData['lastname'] . "'" . 
+			", telephone = '" . $formData['telephone'] . "'" . 
+			", payment_city = '" . $formData['city'] . "'" . 
+			", payment_address_1 = '" . $formData['address'] . "'" . 
+			", order_status_id = 2" . 
+			', date_added = NOW()' .
+			', date_modified = NOW()' 
+		);
+
+
+		$orderId = $this->db->getLastId();
+
+		foreach ($products as $product) {
+
+			$this->db->query("INSERT INTO oc_order_product SET order_id = " . $orderId . 
+				", product_id = '" . $product['product_id'] . "'" .
+				", name = '" . $product['name'] . "'" .
+				", model = '" . $product['model'] . "'" .
+				", quantity = '" . $product['quantity'] . "'" .
+				", price = '" . $product['price'] . "'" .
+				", total = '" . $product['total'] . "'"
+			);
+		}
+
+		$this->db->query("INSERT INTO oc_order_total SET order_id = " . $orderId .
+			", code = 'total' " .
+			", title = 'Итого' " .
+			", value = " . $orderTotal
+		);
+
+	}
 }

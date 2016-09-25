@@ -7,6 +7,11 @@ class ControllerCheckoutCart extends Controller {
 
 		$data['breadcrumbs'] = array();
 
+
+		// var_dump($this->cart);
+		// $cart = $this->cart->getProducts();
+		// var_dump($cart);
+
 		// $data['breadcrumbs'][] = array(
 		// 	'href' => $this->url->link('common/home'),
 		// 	'text' => $this->language->get('text_home')
@@ -479,5 +484,27 @@ class ControllerCheckoutCart extends Controller {
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
+	}
+
+
+	public function order()
+	{
+		$products = $this->cart->getProducts();
+		$formData = $this->request->post;
+		$this->load->model('checkout/order');
+
+		$orderTotal = $this->cart->getTotal();
+		$customerId = 1;
+
+		$this->model_checkout_order->addFastOrder($products, $formData, $orderTotal, $customerId);
+		$this->cart->clear();
+
+		$this->response->redirect($this->url->link('checkout/cart/success'));
+	}
+
+
+	public function success()
+	{
+		echo "1";
 	}
 }

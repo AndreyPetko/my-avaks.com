@@ -1237,7 +1237,8 @@ class ControllerSaleOrder extends Controller {
 
 			$this->load->model('extension/extension');
 
-			$content = $this->load->controller('payment/' . $order_info['payment_code'] . '/order');
+			// $content = $this->load->controller('payment/' . $order_info['payment_code'] . '/order');
+			$content = '';
 
 			if ($content) {
 				$this->load->language('payment/' . $order_info['payment_code']);

@@ -105,11 +105,42 @@
           </table>
         </div>
       </form>
-      <?php if ($coupon || $voucher || $reward || $shipping) { ?>
-      <h2><?php echo $text_next; ?></h2>
-      <p><?php echo $text_next_choice; ?></p>
-      <div class="panel-group" id="accordion"><?php echo $coupon; ?><?php echo $voucher; ?><?php echo $reward; ?><?php echo $shipping; ?></div>
-      <?php } ?>
+
+
+      <form action="/index.php?route=checkout/cart/order" method="POST">
+
+      <div class="form-group">
+        <label for="name">Имя</label>
+        <input type="text" class="form-control" name="firstname" value=""/>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Фамилия</label>
+        <input type="text" class="form-control" name="lastname" value=""/>
+      </div>
+
+
+      <div class="form-group">
+        <label for="name">Номер телефона</label>
+        <input type="text" class="form-control" name="telephone" value=""/>
+      </div>
+
+
+      <div class="form-group">
+        <label for="name">Город</label>
+        <input type="text" class="form-control" name="city" value=""/>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Адрес</label>
+        <input type="text" class="form-control" name="address" value=""/>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Комментарий</label>
+        <textarea class="form-control" name="comment"></textarea>
+      </div>
+
       <br />
       <div class="row">
         <div class="col-sm-4 col-sm-offset-8">
@@ -124,9 +155,25 @@
         </div>
       </div>
       <div class="buttons">
-        <div class="pull-left"><a href="<?php echo $continue; ?>" class="btn btn-default"><?php echo $button_shopping; ?></a></div>
-        <div class="pull-right"><a href="<?php echo $checkout; ?>" class="btn btn-primary"><?php echo $button_checkout; ?></a></div>
+        <!-- <div class="pull-left"><a href="<?php echo $continue; ?>" class="btn btn-default"><?php echo $button_shopping; ?></a></div> -->
+        <!-- <div class="pull-right"><a href="" id="add-order" class="btn btn-primary"><?php echo $button_checkout; ?></a></div> -->
+        <div class="pull-right">
+          <button class="btn btn-primary">Создать заказ</button>
+        </div>
       </div>
+
+      </form>
+
+
+      <script>
+      $(document).ready(function() {
+          $('#add-order').click(function(e) {
+              e.preventDefault();
+              
+          });
+      });
+      </script>
+
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
