@@ -1557,6 +1557,20 @@ border-bottom-left-radius: 0px;
 		text-decoration: underline;
 	}
 
+	.cart-total-row{
+border: 1px solid #b0c1d1;
+overflow: auto;
+padding: 5px;
+margin:5px 0;
+	}
+.cart-total-row div{
+	float: right;
+	margin-right: 30px;
+}
+.cart-total-row div:last-child {
+	color: #00519c;
+}
+
 	/*------------- end product content ---------------------*/
 
 

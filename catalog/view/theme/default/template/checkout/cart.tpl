@@ -37,11 +37,14 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1><?php echo $heading_title; ?>
+     <div class="main-title"> <h1><?php echo $heading_title; ?>
         <?php if ($weight) { ?>
         &nbsp;(<?php echo $weight; ?>)
         <?php } ?>
-      </h1>
+      </h1></div>
+<div class="row">
+<div class="col-sm-9">
+
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
         <div class="table-responsive">
           <table class="table table-bordered">
@@ -80,7 +83,7 @@
                   <span class="label label-info"><?php echo $text_recurring_item; ?></span> <small><?php echo $product['recurring']; ?></small>
                   <?php } ?></td>
                 <td class="text-left"><?php echo $product['model']; ?></td>
-                <td class="text-left"><div class="input-group btn-block" style="max-width: 200px;">
+                <td class="text-left"><div class="input-group btn-block" style="min-width: 140px;">
                     <input type="text" name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="form-control" />
                     <span class="input-group-btn">
                     <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="btn btn-primary"><i style="color:white;" class="fa fa-refresh"></i></button>
@@ -105,35 +108,35 @@
           </table>
         </div>
       </form>
-
-
-      <form action="/index.php?route=checkout/cart/order" method="POST">
+</div>
+<div class="col-sm-3">
+<form action="/index.php?route=checkout/cart/order" method="POST">
 
       <div class="form-group">
         <label for="name">Имя</label>
-        <input type="text" class="form-control" name="firstname" value="<?php if(isset($user['lastname'])) echo $user['firstname'] ?>"/>
+        <input type="text" required class="form-control" name="firstname" value="<?php if(isset($user['lastname'])) echo $user['firstname'] ?>"/>
       </div>
 
       <div class="form-group">
         <label for="name">Фамилия</label>
-        <input type="text" class="form-control" name="lastname" value="<?php if(isset($user['lastname'])) echo $user['lastname'] ?>"/>
+        <input type="text" required class="form-control" name="lastname" value="<?php if(isset($user['lastname'])) echo $user['lastname'] ?>"/>
       </div>
 
 
       <div class="form-group">
         <label for="name">Номер телефона</label>
-        <input type="text" class="form-control" name="telephone" value="<?php if(isset($user['lastname'])) echo $user['telephone'] ?>"/>
+        <input type="text" required class="form-control" name="telephone" value="<?php if(isset($user['lastname'])) echo $user['telephone'] ?>"/>
       </div>
 
 
       <div class="form-group">
         <label for="name">Город</label>
-        <input type="text" class="form-control" name="city" value=""/>
+        <input type="text" required class="form-control" name="city" value=""/>
       </div>
 
       <div class="form-group">
         <label for="name">Адрес</label>
-        <input type="text" class="form-control" name="address" value=""/>
+        <input type="text" required class="form-control" name="address" value=""/>
       </div>
 
 
@@ -166,28 +169,41 @@
       </div>
 
       <br />
+      </div>
+</div>
       <div class="row">
-        <div class="col-sm-4 col-sm-offset-8">
-          <table class="table table-bordered">
+       <!--  <div class="col-sm-4 col-sm-offset-8"> -->
+       <!--    <table class="table table-bordered"> -->
             <?php foreach ($totals as $total) { ?>
-            <tr>
+             <div class="cart-total-row">
+         <div><?php echo $total['text']; ?></div>
+        <div><strong><?php echo $total['title']; ?>:</strong></div>
+
+        </div>
+            <!-- <tr>
               <td class="text-right"><strong><?php echo $total['title']; ?>:</strong></td>
               <td class="text-right"><?php echo $total['text']; ?></td>
-            </tr>
+            </tr> -->
             <?php } ?>
-          </table>
-        </div>
+         <!--  </table> -->
+        <!-- </div> -->
+
       </div>
       <div class="buttons">
         <!-- <div class="pull-left"><a href="<?php echo $continue; ?>" class="btn btn-default"><?php echo $button_shopping; ?></a></div> -->
         <!-- <div class="pull-right"><a href="" id="add-order" class="btn btn-primary"><?php echo $button_checkout; ?></a></div> -->
-        <div class="pull-right">
+        <div class="pull-right" style="margin-right: -15px;">
           <button class="btn btn-primary">Создать заказ</button>
         </div>
       </div>
 
       </form>
 
+
+
+
+
+      
 
       <script>
       $(document).ready(function() {
