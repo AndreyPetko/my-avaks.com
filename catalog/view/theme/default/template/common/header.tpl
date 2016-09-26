@@ -331,9 +331,9 @@
 					<div class="col-md-9">
 						<ul class="super-menu-top">
 							<a href="/index.php?route=information/information&information_id=4"><li>О нас</li></a>
-							<a href=""><li>Оплата</li></a>
+							<a href="http://avaks.tv/index.php?route=information/information&information_id=10"><li>Оплата</li></a>
 							<a href="/index.php?route=information/information&information_id=6"><li>Доставка</li></a>
-							<a href=""><li>Гарантия</li></a>
+							<a href="http://avaks.tv/index.php?route=information/information&information_id=9"><li>Гарантия</li></a>
 							<a href="/index.php?route=information/contact"><li>Контакты</li></a>
 							<a href="index.php?route=information/contact"><li>Обратная связь</li></a>
 						</ul>
