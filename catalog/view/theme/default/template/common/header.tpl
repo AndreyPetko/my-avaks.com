@@ -14,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="/catalog/view/theme/default/css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="/catalog/view/theme/default/bootstrap-jq/jquery.js"></script>
-	<script src="/catalog/view/theme/default//js/main.js"></script>
+	<script src="/catalog/view/theme/default/js/main.js"></script>
 	<script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
 	<script src="catalog/view/javascript/common.js" type="text/javascript"></script>
 	<?php foreach ($links as $link) { ?>
@@ -27,8 +27,8 @@
 	<?php echo $analytic; ?>
 	<?php } ?>
 	<!-- <link href="catalog/view/theme/coloring/assets/share/social-likes_birman.css" type="text/css" rel="stylesheet" media="screen"> -->
-	<script src="catalog/view/theme/coloring/assets/share/social-likes.min.js" type="text/javascript"></script>
-	<link href="catalog/view/theme/coloring/assets/font-awesome-4.4.0/css/font-awesome.css" rel="stylesheet">
+	<script src="catalog/view/theme/default/js/social-likes.min.js" type="text/javascript"></script>
+	<link href="catalog/view/theme/default/css/font-awesome.css" rel="stylesheet">
 
 </head>
 <body>
