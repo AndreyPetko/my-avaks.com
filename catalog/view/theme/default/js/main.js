@@ -52,23 +52,21 @@ document.addEventListener("DOMContentLoaded", function(){
 		});
 	};
 
-// 	var iconsPrem = document.getElementsByClassName('category-menu-premium')[0];
-// 	var iconsPremImg = iconsPrem.getElementsByTagName('img');
-// 	if(iconsPrem){
-// 	console.log(iconsPremImg.length);
-// 	for(i=0; i<iconsPremImg.length; i++){
-// 		iconsPremImg[i].parentNode.parentNode.addEventListener('mouseover', function(){
-// 			var itemImg = this.getElementsByTagName('img')[0];
-// 			var oldSrc = itemImg.src.substring(0, itemImg.src.length - 5);
-// 			itemImg.src = oldSrc + "w.png";
-// 		});
-// 		iconsPremImg[i].parentNode.parentNode.addEventListener('mouseout', function(){
-// 			var itemImg = this.getElementsByTagName('img')[0];
-// 			var oldSrc = itemImg.src.substring(0, itemImg.src.length - 5);
-// 			itemImg.src = oldSrc + "g.png";
-// 		});
-// 	}
-// };
+		var iconsPrem = document.getElementsByClassName('category-menu-item-premium');
+	if(iconsPrem){
+	for(i=0; i<iconsPrem.length; i++){
+		iconsPrem[i].addEventListener('mouseover', function(){
+			var itemImg = this.getElementsByTagName('img')[0];
+			var oldSrc = itemImg.src.substring(0, itemImg.src.length - 5);
+			itemImg.src = oldSrc + "w.png";
+		});
+		iconsPrem[i].addEventListener('mouseout', function(){
+			var itemImg = this.getElementsByTagName('img')[0];
+			var oldSrc = itemImg.src.substring(0, itemImg.src.length - 5);
+			itemImg.src = oldSrc + "g.png";
+		});
+	}
+};
 
 
 var socialBlock = document.getElementById('socialBlock');

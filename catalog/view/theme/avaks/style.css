@@ -294,7 +294,7 @@ a:hover{
 #submenuUl ul li a{
 	color: black;
 }
-#submenuUl ul li:hover{
+#submenuUl ul li{
 	list-style: url(images/footer-arrow.png);
 }
 #submenuImg{

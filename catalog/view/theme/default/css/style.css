@@ -388,11 +388,17 @@ cursor: pointer;
 	color: black;
 	font-size: 14px;
 }
-#submenuUl ul li:hover{
+#submenuUl ul li{
 	list-style: url(../images/footer-arrow.png);
 }
-#submenuUl2 ul li:hover{
+#submenuUl2 ul li{
 	list-style: url(../images/footer-arrow.png);
+}
+#submenuUl ul li a:hover{
+	color:#00519c;
+}
+#submenuUl2 ul li a:hover{
+		color:#00519c;
 }
 #submenuImg{
 	width: 200px;
