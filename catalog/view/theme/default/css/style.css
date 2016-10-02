@@ -146,6 +146,8 @@ background-color: #e4e9ee;
 }
 .clock-item{
 	margin-top: 25px;
+	overflow: auto;
+line-height: 24px;
 }
 
 .clock-img{
@@ -153,7 +155,7 @@ background-color: #e4e9ee;
 }
 .clock-txt{
 	float: left;
-	font-size: 13px;
+	font-size: 12px;
 	margin-left: 5px;
 }
 .cart-icons-item{
@@ -671,6 +673,7 @@ float: left;*/
 	height: 40px;
 	font-size: 16px;
 	color: #00519c;
+	text-align: right;
 }
 .news-all:hover{
 	text-decoration: underline;
@@ -678,6 +681,7 @@ float: left;*/
 .tria-right {
 	border: 1px solid #e8e8e8;
 	position: relative;
+	padding-right: 20px;
 }
 .tria-right::before, .tria-right::after {
 	content: ''; 
@@ -718,6 +722,8 @@ float: left;*/
 	color: #767676;
 	height: 60px;
 	overflow: hidden;
+	margin-bottom: 10px;
+padding: 0 5px;
 }
 .date{
 	float: left;
@@ -1594,6 +1600,12 @@ margin:5px 0;
 		.phone-item img{
 			display: none;
 		}
+		.clock-item{
+	line-height: 14px;
+}
+.clock-item img{ 
+	display: none;
+}
 
 	}
 
