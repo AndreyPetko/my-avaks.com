@@ -477,6 +477,55 @@ arrowUp.addEventListener('click', function(){
   };
 //иконки "желание" и "сравнение"
 
+//иконки "желание" и "сравнение"
+
+  var toWishPr = document.getElementsByClassName('product-wishlist')[0];
+  var toCompPr = document.getElementsByClassName('product-compaire')[0];
+  if(toWishPr){
+ 
+      toWishPr.addEventListener('click', function(){
+      	var toWishPrImg = this.getElementsByTagName('img')[0];
+        if(toWishPrImg.src == 'http://avaks.tv/catalog/view/theme/default/images/wishlist-icon-b.png'){
+          toWishPrImg.src = 'http://avaks.tv/catalog/view/theme/default/images/wishlist-icon-g.png';
+        }
+        else{
+             toWishPrImg.src = 'http://avaks.tv/catalog/view/theme/default/images/wishlist-icon-b.png';
+
+        }
+
+      })
+    
+
+      toCompPr.addEventListener('click', function(){
+      var toCompPrImg = this.getElementsByTagName('img')[0];
+      console.log(toCompPrImg);
+      	var pathArray = location.href.split( '/' );
+		var protocol = pathArray[0];
+		var host = pathArray[2];
+		var url = protocol + '//' + host;
+
+        if(toCompPrImg.src == url + '/catalog/view/theme/default/images/compaire-icon-g.png'){
+        	var compareCount = parseInt($('#compare').text());
+        	if(compareCount == 4) {
+        		alert('Слишком много элементов в сравнении, уберите лишние на странице');
+        		return;
+        	}
+
+        	$('#compare').text(compareCount + 1);
+          	toCompPrImg.src = url + '/catalog/view/theme/default/images/compaire-icon-b.png';
+        }
+        else {
+        	 var compareCount = parseInt($('#compare').text());
+        	 $('#compare').text(compareCount - 1);
+             toCompPrImg.src = url + '/catalog/view/theme/default/images/compaire-icon-g.png';
+        }
+
+      })
+    };
+
+ 
+//иконки "желание" и "сравнение"
+
 });
 
 
