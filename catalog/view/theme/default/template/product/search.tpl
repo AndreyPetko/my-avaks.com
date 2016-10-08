@@ -143,7 +143,7 @@
                   Купить
                 </div>
               </div>
-           
+
           </div>
         </div>
       <!--    <div class="product-layout product-list col-xs-12">

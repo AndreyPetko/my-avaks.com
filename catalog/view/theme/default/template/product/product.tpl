@@ -612,6 +612,9 @@
 				$('.text-danger').parent().addClass('has-error');
 			}
 
+			var cartCount = parseInt($('#cartCount').text());
+            $('#cartCount').text(cartCount + 1);
+
 			if (json['success']) {
 				$('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
