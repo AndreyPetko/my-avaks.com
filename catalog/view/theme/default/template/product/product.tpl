@@ -50,7 +50,8 @@
 						<?php if ($reward) { ?>
 						<p><?php echo $text_reward; ?> <?php echo $reward; ?></p>
 						<?php } ?>
-						<div class="availability avail-true">
+
+						<div class="availability <?php if($quantity_stock >= 0) : ?> avail-true <?php else : ?> avail-false <?php endif; ?> ">
 							<?php echo $stock; ?>
 						</div>
 					</div>
