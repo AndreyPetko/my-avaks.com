@@ -18,6 +18,7 @@
                       <div id="category-content">
                         <div class="container">
                           <div class="row">
+                          <?php if($show_filter) : ?>
                             <div class="col-md-3">
                               <div id="filter">
                                 <div class="filter-head">
@@ -86,7 +87,9 @@
                               <?php } ?>
                                 </div>
                             </div>
-                            <div class="col-md-9">
+
+                          <?php endif; ?>
+                            <div class="<?php if($show_filter) : ?> col-md-9 <?php else : ?> col-md-12 <?php endif; ?> ">
                               <div class="main-title">
                                 <h1><?php echo $heading_title; ?></h1>
                               </div>
