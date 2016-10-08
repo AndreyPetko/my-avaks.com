@@ -124,6 +124,12 @@
 
 
       <div class="form-group">
+        <label for="name">Email</label>
+        <input type="text" required class="form-control" name="email" value="<?php if(isset($user['email'])) echo $user['email'] ?>"/>
+      </div>
+
+
+      <div class="form-group">
         <label for="name">Номер телефона</label>
         <input type="text" required class="form-control" name="telephone" value="<?php if(isset($user['lastname'])) echo $user['telephone'] ?>"/>
       </div>
@@ -140,10 +146,10 @@
       </div>
 
 
-      <div class="form-group">
+<!--       <div class="form-group">
         <label for="name">Способ оплаты</label>
         <input type="text" class="form-control" name="payment_method" value=""/>
-      </div>
+      </div> -->
 
 
       <div class="form-group">
@@ -166,6 +172,12 @@
             <option value="Доставка по городу">Доставка по городу</option>
             <option value="Доставка с фиксированной стоимостью доставки">Доставка с фиксированной стоимостью доставки</option>
         </select>
+      </div>
+
+
+      <div class="form-group">
+        <label>Комментарий</label>
+        <textarea class="form-control" name="comment"></textarea>
       </div>
 
       <br />

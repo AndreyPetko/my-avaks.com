@@ -8,7 +8,7 @@ class ControllerModuleNews extends Controller {
 		
 		$filter_data = array(
 			'page' => 1,
-			'limit' => 2,
+			'limit' => 4,
 			'start' => 0,
 		);
 		
@@ -18,11 +18,11 @@ class ControllerModuleNews extends Controller {
 		
 		$data['all_news_link'] = $this->url->link('information/news');
 		$data['all_news_text'] = $this->language->get('all_news_text');
-	 
+
 		$all_news = $this->model_extension_news->getAllNews($filter_data);
-	 
+
 		$data['all_news'] = array();
-	 
+
 		foreach ($all_news as $news) {
 			$data['all_news'][] = array (
 				'title' 		=> html_entity_decode($news['title'], ENT_QUOTES),
@@ -32,9 +32,8 @@ class ControllerModuleNews extends Controller {
 				'image' => $this->model_tool_xdsimage->resize($news['image'], 240, 140)
 			);
 		}
-		
-		
-	 
+
+
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/news.tpl')) {
 			return $this->load->view($this->config->get('config_template') . '/template/module/news.tpl', $data);
 		} else {

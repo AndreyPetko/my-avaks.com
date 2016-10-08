@@ -44,8 +44,8 @@
       </div>
 
       <div class="customNavigation">
-        <a class=" prev"><img src="/catalog/view/theme/default/images/arrowL1.png"></a>
-        <a class=" next"><img src="/catalog/view/theme/default/images/arrowR1.png"></a>
+        <a class=" prev3"><img src="/catalog/view/theme/default/images/arrowL1.png"></a>
+        <a class=" next3"><img src="/catalog/view/theme/default/images/arrowR1.png"></a>
       </div>
 
 

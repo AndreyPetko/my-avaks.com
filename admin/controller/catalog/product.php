@@ -753,9 +753,8 @@ class ControllerCatalogProduct extends Controller {
 
 		if (isset($this->request->post['image']) && is_file(DIR_IMAGE . $this->request->post['image'])) {
 			$data['thumb'] = $this->model_tool_image->resize($this->request->post['image'], 100, 100);
-		} elseif (!empty($product_info) && is_file(DIR_IMAGE . '/' .  $product_info['image'])) {
-			echo "1";
-			$data['thumb'] = $this->model_tool_image->resize('/' . $product_info['image'], 100, 100);
+		} elseif (!empty($product_info) && is_file(DIR_IMAGE .  $product_info['image'])) {
+			$data['thumb'] = $this->model_tool_image->resize($product_info['image'], 100, 100);
 		} else {
 			$data['thumb'] = $this->model_tool_image->resize('no_image.png', 100, 100);
 		}

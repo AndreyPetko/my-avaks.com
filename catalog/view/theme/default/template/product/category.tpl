@@ -101,7 +101,7 @@
                                       <div class="col-sm-3">
                                         <ul class="categories-list">
                                           <?php foreach ($categories as $category) { ?>
-                                            <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
+                                             <li><a href="<?php echo $category['href']; ?>"><img src="<?php echo $category['thumb']; ?>"><p><?php echo $category['name']; ?></p></a></li>
                                             <?php } ?>
                                           </ul>
                                         </div>
@@ -109,11 +109,11 @@
                                       <?php } 
                                       else { ?>
                                         <div class="row">
-                                          <?php foreach (array_chunk($categories, ceil(count($categories) / 4)) as $categories) { ?>
-                                            <div class="col-sm-3">
+                                          <?php foreach (array_chunk($categories, ceil(count($categories) / 3)) as $categories) { ?>
+                                            <div class="col-sm-4">
                                               <ul class="categories-list">
                                                 <?php foreach ($categories as $category) { ?>
-                                                  <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
+                                                  <li><a href="<?php echo $category['href']; ?>"><img src="<?php echo $category['thumb']; ?>"><p><?php echo $category['name']; ?></p></a></li>
                                                   <?php } ?>
                                                 </ul>
                                               </div>

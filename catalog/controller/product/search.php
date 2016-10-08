@@ -460,6 +460,41 @@ class ControllerProductSearch extends Controller {
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 
+
+
+		if ($this->customer->isLogged()) {
+				$customerId = $this->customer->getId();
+
+				foreach ($data['products'] as $key => $product) {
+					$result = $this->db->query("SELECT COUNT(customer_id) as count FROM oc_customer_wishlist WHERE customer_id = " . $customerId
+						. " AND product_id = " . $product['product_id']);
+
+					$data['products'][$key]['in_wishlist'] = $result->row['count'];
+				}
+			} else {
+				foreach ($data['products'] as $key => $product) {
+					$data['products'][$key]['in_wishlist'] = 0;
+				}
+			}
+
+
+			if(isset($this->session->data['compare'])) {
+				$compareArr = $this->session->data['compare'];
+
+				foreach ($data['products'] as $key => $product) {
+					if(in_array($product['product_id'], $compareArr)) {
+						$data['products'][$key]['in_compare'] = 1;
+					} else {
+						$data['products'][$key]['in_compare'] = 0;
+					}
+				}
+
+			} else {
+				foreach ($data['products'] as $key => $product) {
+					$data['products'][$key]['in_compare'] = 0;
+				}
+			}
+
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/search.tpl')) {
 			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/product/search.tpl', $data));
 		} else {

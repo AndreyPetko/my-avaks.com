@@ -854,6 +854,8 @@ class ModelCheckoutOrder extends Model {
 		$this->db->query("INSERT INTO oc_order SET  firstname = '" . $formData['firstname'] . "'" . 
 			", customer_id = " . $customerId .
 			", lastname = '" . $formData['lastname'] . "'" . 
+			", email = '" . $formData['email'] . "'" . 
+			", comment = '" . $formData['comment'] . "'" . 
 			", telephone = '" . $formData['telephone'] . "'" . 
 			", payment_city = '" . $formData['city'] . "'" . 
 			", payment_address_1 = '" . $formData['address'] . "'" . 

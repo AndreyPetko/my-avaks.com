@@ -1,5 +1,17 @@
 document.addEventListener("DOMContentLoaded", function(){
 
+
+
+	$('.child-item').mouseover(function(){
+		var key = $(this).data('childid');
+		$('.child-images').hide();
+		$('#child-img-' + key).show();
+	});
+
+	$('.child-item').mouseout(function(){
+		$('.child-images').hide();
+	});
+
 	var icons = document.getElementsByClassName('top-social')[0];
 	var icons2 = document.getElementById('footer-social');
 	var iconsImg1 = icons.getElementsByTagName('img');
@@ -52,23 +64,21 @@ document.addEventListener("DOMContentLoaded", function(){
 		});
 	};
 
-// 	var iconsPrem = document.getElementsByClassName('category-menu-premium')[0];
-// 	var iconsPremImg = iconsPrem.getElementsByTagName('img');
-// 	if(iconsPrem){
-// 	console.log(iconsPremImg.length);
-// 	for(i=0; i<iconsPremImg.length; i++){
-// 		iconsPremImg[i].parentNode.parentNode.addEventListener('mouseover', function(){
-// 			var itemImg = this.getElementsByTagName('img')[0];
-// 			var oldSrc = itemImg.src.substring(0, itemImg.src.length - 5);
-// 			itemImg.src = oldSrc + "w.png";
-// 		});
-// 		iconsPremImg[i].parentNode.parentNode.addEventListener('mouseout', function(){
-// 			var itemImg = this.getElementsByTagName('img')[0];
-// 			var oldSrc = itemImg.src.substring(0, itemImg.src.length - 5);
-// 			itemImg.src = oldSrc + "g.png";
-// 		});
-// 	}
-// };
+	var iconsPrem = document.getElementsByClassName('category-menu-item-premium');
+	if(iconsPrem){
+	for(i=0; i<iconsPrem.length; i++){
+		iconsPrem[i].addEventListener('mouseover', function(){
+			var itemImg = this.getElementsByTagName('img')[0];
+			var oldSrc = itemImg.src.substring(0, itemImg.src.length - 5);
+			itemImg.src = oldSrc + "w.png";
+		});
+		iconsPrem[i].addEventListener('mouseout', function(){
+			var itemImg = this.getElementsByTagName('img')[0];
+			var oldSrc = itemImg.src.substring(0, itemImg.src.length - 5);
+			itemImg.src = oldSrc + "g.png";
+		});
+	}
+};
 
 
 var socialBlock = document.getElementById('socialBlock');
@@ -327,9 +337,9 @@ var catalogButton = document.getElementById('catalog-button');
 function getIndex() {
 	var ourUrl = window.location.href;
 
-	return	ourUrl == "http://avaks.ap.org.ua/index.php?route=common/home" || 
-	ourUrl == "http://avaks.ap.org.ua/index.php" || 
-	ourUrl == "http://avaks.ap.org.ua/";
+	return	ourUrl == "http://avaks.tv/index.php?route=common/home" || 
+	ourUrl == "http://avaks.tv/index.php" || 
+	ourUrl == "http://avaks.tv/";
 }
 
 
@@ -423,22 +433,22 @@ arrowUp.addEventListener('click', function(){
   if(toWish){
     for(i=0; i < toWish.length; i++){
       toWish[i].addEventListener('click', function(){
-        if(this.src == 'catalog/view/theme/default/images/icon-to-wish-product-g.png'){
-          this.src = 'catalog/view/theme/default/images/icon-to-wish-product-w.png';
+        if(this.src == 'http://avaks.tv/catalog/view/theme/default/images/icon-to-wish-product-g.png'){
+          this.src = 'http://avaks.tv/catalog/view/theme/default/images/icon-to-wish-product-w.png';
         }
         else{
-             this.src = 'catalog/view/theme/default/images/icon-to-wish-product-g.png';
+             this.src = 'http://avaks.tv/catalog/view/theme/default/images/icon-to-wish-product-g.png';
         }
 
       })
     };
      for(i=0; i < toComp.length; i++){
       toComp[i].addEventListener('click', function(){
-        if(this.src == 'catalog/view/theme/default/images/icon-to-comp-product-g.png'){
-          this.src = 'catalog/view/theme/default/images/icon-to-comp-product-w.png';
+        if(this.src == 'http://avaks.tv/catalog/view/theme/default/images/icon-to-comp-product-g.png'){
+          this.src = 'http://avaks.tv/catalog/view/theme/default/images/icon-to-comp-product-w.png';
         }
         else{
-             this.src = 'catalog/view/theme/default/images/icon-to-comp-product-g.png';
+             this.src = 'http://avaks.tv/catalog/view/theme/default/images/icon-to-comp-product-g.png';
         }
 
       })
@@ -479,10 +489,10 @@ $(document).ready(function() {
       itemsTablet: [600,2], //2 items between 600 and 0
       itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
   });
-  $(".next").click(function(){
+  $(".next2").click(function(){
   	owl2.trigger('owl.next');
   })
-  $(".prev").click(function(){
+  $(".prev2").click(function(){
   	owl2.trigger('owl.prev');
   })
   owl2.trigger('owl.play',5000);
@@ -495,10 +505,10 @@ $(document).ready(function() {
       itemsTablet: [600,2], //2 items between 600 and 0
       itemsMobile : true // itemsMobile disabled - inherit from itemsTablet option
   });
-  $(".next").click(function(){
+  $(".next3").click(function(){
   	owl3.trigger('owl.next');
   })
-  $(".prev").click(function(){
+  $(".prev3").click(function(){
   	owl3.trigger('owl.prev');
   })
   owl3.trigger('owl.play',5000);

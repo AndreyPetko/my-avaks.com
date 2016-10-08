@@ -16,12 +16,13 @@ text-align: center;
         margin-right: 5px;
       }
  </style>
+
  <div id="cart">
   <a href="<?php echo $cart; ?>">
 <!--   <button> -->
  	<div class='cart-icons-item'>
  		<img class='cart-icons-img' src="/catalog/view/theme/default/images/cart-icon-g.png">
- 		<?php echo $text_items; ?>
+ 		<span id="cartCount"><?php echo $text_items; ?></span>
  	</div>
 <!--   </button>
  --> </a> 
@@ -83,9 +84,9 @@ text-align: center;
   </ul>
 </div>
  <script>
- var cart = document.getElementById('cart');
- var buttonCart = cart.getElementsByClassName('cart-icons-item')[0];
- var buttonCartUl = cart.getElementsByClassName('buttonCart')[0];
+ var cartUtka = document.getElementById('cart');
+ var buttonCart = cartUtka.getElementsByClassName('cart-icons-item')[0];
+ var buttonCartUl = cartUtka.getElementsByClassName('buttonCart')[0];
  buttonCart.addEventListener('mouseover', function(){
  	buttonCartUl.style.display = "block";
  });

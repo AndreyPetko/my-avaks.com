@@ -12,8 +12,8 @@
 						<?php foreach ($categories as $key => $category): ?>
 							<?php if ($category['children']): ?>
 								<ul  class="child-list" id="children-<?php echo $key ?>">
-									<?php foreach ($category['children'] as $child): ?>
-										<li><a href="<?php echo $child['href'] ?>"><?php echo $child['name'] ?></a></li>
+									<?php foreach ($category['children'] as $childKey => $child): ?>
+										<li data-childid="<?php echo $child['id'] ?>" class="child-item"><img src=""><a href="<?php echo $child['href'] ?>"><?php echo $child['name'] ?></a></li>
 									<?php endforeach ?>
 								</ul>
 							<?php endif ?>
@@ -22,8 +22,15 @@
 					</div>
 					<a href="">
 						<div id="submenuImg">
-							<!-- 	<h4><?php echo $cat['name'] ?> </h4> -->
-							<!-- <img src="<?php echo $thumb; ?>" alt="<?php echo $heading_title; ?>" title="<?php echo $heading_title; ?>"  /> -->
+								<!-- <h4><?php echo $cat['name'] ?> </h4> -->
+								<?php foreach ($categories as $key => $category): ?>
+									<?php if ($category['children']): ?>
+								<?php foreach ($category['children'] as $childKey => $child): ?>
+									<img id="child-img-<?php echo $child['id']; ?>" class="child-images" style="display: none;" src="<?php echo HTTP_SERVER . 'image/' . $child['image'] ?>" />
+								<?php endforeach ?>
+									<?php endif ?>
+
+						<?php endforeach ?>
 						</div>
 					</a>
 				</div>

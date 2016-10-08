@@ -1,9 +1,9 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://my-avaks.com/');
+define('HTTP_SERVER', 'http://avaks1.com/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://my-avaks.com/');
+define('HTTPS_SERVER', 'http://avaks1.com/');
 
 // DIR
 define('DIR_APPLICATION', 'catalog/');
@@ -23,6 +23,6 @@ define('DB_DRIVER', 'mysqli');
 define('DB_HOSTNAME', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '1234');
-define('DB_DATABASE', 'avaks');
+define('DB_DATABASE', 'avakstv');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'oc_');

@@ -171,6 +171,6 @@
 <link rel="stylesheet" href="/catalog/view/theme/default/owl-carousel/owl.carousel.css">
 <link rel="stylesheet" href="/catalog/view/theme/default/owl-carousel/owl.theme.css">
 <script src="/catalog/view/theme/default/owl-carousel/owl.carousel.js"></script>
-<link href="catalog/view/theme/coloring/assets/share/social-likes_birman.css" type="text/css" rel="stylesheet" media="screen">
+<link href="catalog/view/theme/default/css/social-likes_birman.css" type="text/css" rel="stylesheet" media="screen">
 </body>
 </html>
