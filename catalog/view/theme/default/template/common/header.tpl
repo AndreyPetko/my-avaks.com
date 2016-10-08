@@ -258,9 +258,9 @@
 
 						<?php endforeach ?>
 						</div>
-							<a href="">
-						<div id="submenuImg">
-								<!-- <h4><?php echo $cat['name'] ?> </h4> -->
+						<!-- 	<a href="">
+						<div id="submenuImg2">
+							
 								<?php foreach ($categories as $key => $category): ?>
 									<?php if ($category['children']): ?>
 								<?php foreach ($category['children'] as $childKey => $child): ?>
@@ -270,7 +270,7 @@
 
 						<?php endforeach ?>
 						</div>
-					</a>
+					</a> -->
 						</div>
 						<div class="">
 							<div id="category-menu2">
