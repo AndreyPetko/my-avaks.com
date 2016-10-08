@@ -1,23 +1,23 @@
 
 @font-face {
-	font-family: FranklinGothBookCTT; /* Имя шрифта */
-	src: url(../font/FranklinGothBookCTT.ttf); /* Путь к файлу со шрифтом */
-	src: url(../font/FranklinGothBookCTT.eot); /* Путь к файлу со шрифтом */
-	src: url(../font/FranklinGothBookCTT.woff); /* Путь к файлу со шрифтом */
+	font-family: OpenSans; /* Имя шрифта */
+	src: url(../font/OpenSansRegular.ttf); /* Путь к файлу со шрифтом */
+	src: url(../font/OpenSansRegular.eot); /* Путь к файлу со шрифтом */
+	src: url(../font/OpenSansRegular.woff); /* Путь к файлу со шрифтом */
 }
 @font-face {
-	font-family: Franklin Gothic Demi Cond; /* Имя шрифта */
-	src: url(../font/FranklinGothicDemiCond.ttf); /* Путь к файлу со шрифтом */
-	src: url(../FranklinGothicDemiCond.eot); /* Путь к файлу со шрифтом */
-	src: url(../font/FranklinGothicDemiCond.woff); /* Путь к файлу со шрифтом */
+	font-family: OpenSansBold; /* Имя шрифта */
+	src: url(../font/OpenSansBold.ttf); /* Путь к файлу со шрифтом */
+	src: url(../font/OpenSansBold.eot); /* Путь к файлу со шрифтом */
+	src: url(../font/OpenSansBold.woff); /* Путь к файлу со шрифтом */
 }
 *{
 	margin: 0;
 	padding: 0;
-	font-family: FranklinGothBookCTT;
+	font-family: OpenSans;
 }
 h1, h2, h3, h4, h5, h6{
-	font-family: FranklinGothBookCTT: ;
+	font-family: OpenSans;
 	font-weight: normal;
 }
 img{
@@ -188,7 +188,7 @@ a.list-group-item:hover{
 	width: 50%;
 	text-align: center;
 	font-size: 14px;
-	font-weight: bold;
+	font-family: OpenSansBold;
 	line-height: 28px;
 	color: black;
 }
@@ -252,12 +252,12 @@ display: block;
 	border-top: 1px solid #ddd;
 }
 #cart .cart-sum .text-right{
-	font-family: Franklin Gothic Demi Cond;
+	font-family: Open Sans Bold;
 	font-size: 18px;
 }
 #cart .cart-price{
 	color: #00519c;
-	font-family: Franklin Gothic Demi Cond;
+	font-family: Open Sans Bold;
 	font-size: 16px;
 
 }
@@ -1106,7 +1106,7 @@ float: left;*/
 		color: #00519c;
 		font-size: 16px;
 		float: left;
-		font-family: Franklin Gothic Demi Cond;
+		font-family: Open Sans Bold;
 		margin:10px 0 0 10px;
 
 	}
@@ -1373,7 +1373,7 @@ float: left;*/
 	.contact-INN{
 		height: 120px;
 		color: #00519c;
-		font-family: Franklin Gothic Demi Cond;
+		font-family:Open Sans Bold;
 		font-size: 16px;
 		padding: 30px 0 0 30px;
 
@@ -1388,7 +1388,7 @@ float: left;*/
 	.contact-form-avaks h5{
 		text-align: center;
 		color: black;
-		font-family: Franklin Gothic Demi Cond;
+		font-family: Open Sans Bold;
 		font-size: 16px;
 
 	}
@@ -1540,7 +1540,7 @@ line-height: 20px;
 		color: #00519c;
 		text-align: center;
 		margin:10px 0;
-		font-family: Franklin Gothic Demi Cond;
+		font-family: Open Sans Bold;
 		font-size: 14px;
 		border-bottom: 1px solid #e4e9ee;
 
@@ -1551,7 +1551,7 @@ line-height: 20px;
 	}
 	.feedback-item .col-xs-6 p{
 		color: black;
-		font-family: FranklinGothBookCTT;
+		font-family: Open Sans;
 	}
 	#product-info-block{
 		padding: 20px;
@@ -1576,7 +1576,7 @@ line-height: 20px;
 		color: #00519c;
 		font-size: 30px;
 		line-height: 20px;
-		font-family: Franklin Gothic Demi Cond;
+		font-family:Open Sans Bold;
 	}
 	.price span{
 		font-size: 20px;
