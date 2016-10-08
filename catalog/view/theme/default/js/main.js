@@ -457,6 +457,11 @@ arrowUp.addEventListener('click', function(){
 
         if(this.src == url + '/catalog/view/theme/default/images/icon-to-comp-product-g.png'){
         	var compareCount = parseInt($('#compare').text());
+        	if(compareCount == 4) {
+        		alert('Слишком много элементов в сравнении, уберите лишние на странице');
+        		return;
+        	}
+
         	$('#compare').text(compareCount + 1);
           	this.src = url + '/catalog/view/theme/default/images/icon-to-comp-product-w.png';
         }
