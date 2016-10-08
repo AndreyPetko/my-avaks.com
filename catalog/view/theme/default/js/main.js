@@ -64,7 +64,9 @@ document.addEventListener("DOMContentLoaded", function(){
 		});
 	};
 
+
 	var iconsPrem = document.getElementsByClassName('category-menu-item-premium');
+
 	if(iconsPrem){
 	for(i=0; i<iconsPrem.length; i++){
 		iconsPrem[i].addEventListener('mouseover', function(){
