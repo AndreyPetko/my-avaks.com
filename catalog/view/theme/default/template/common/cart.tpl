@@ -21,7 +21,7 @@ text-align: center;
   <a href="<?php echo $cart; ?>">
 <!--   <button> -->
  	<div class='cart-icons-item'>
- 		<img class='cart-icons-img' src="/catalog/view/theme/default/images/cart-icon-g.png">
+ 		<img class='cart-icons-img' src="/catalog/view/theme/default/images/cart-icon-new.png">Корзина
  		<span id="cartCount"><?php echo $text_items; ?></span>
  	</div>
 <!--   </button>
@@ -73,7 +73,9 @@ text-align: center;
           </tr>
           <?php } ?>
         </table>
-        <p class="text-right"><a href="<?php echo $checkout; ?>"><strong><img src="/catalog/view/theme/default/images/icon-checkout.png"> <?php echo $text_checkout; ?></strong></a>&nbsp;&nbsp;&nbsp;<a href="<?php echo $cart; ?>"><strong><img src="catalog/view/theme/default/images/cart-icon-g.png" width="22" height="16">В корзину</strong></a></p>
+        <p class="text-right">
+       <!--  <a href="<?php echo $checkout; ?>"><strong><img src="/catalog/view/theme/default/images/icon-checkout.png"> Продолжить покупки</strong></a> -->
+        <a href="<?php echo $cart; ?>"><strong><img src="catalog/view/theme/default/images/cart-icon-g.png" width="22" height="16">В корзину</strong></a></p>
       </div>
     </li>
     <?php } else { ?>

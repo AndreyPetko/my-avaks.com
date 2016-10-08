@@ -33,6 +33,7 @@
 </head>
 <body>
 	<div id="header">
+		<div class="blue-line"></div>
 		<div id="top-head">
 			<div class="container">
 				<div class="top-social">
@@ -78,26 +79,14 @@
 					</a>
 				</div>
 				<div class="top-account">
-					<!-- <a href="">
-						<div class="top-account-item">
-							Вход
-						</div>
-					</a>
-					<a href="">
-						<div class="top-account-item">
-							Регистрация
-						</div>
-					</a> -->
+					
 					<?php if ($logged) { ?>
-					<a href="<?php echo $logout; ?>"><div class="top-account-item"><?php echo $text_logout; ?></div></a>
+					<a href="<?php echo $logout; ?>"><div class="top-account-item"><?php echo $text_logout; ?></div></a><span>/</span>
 					<a href="<?php echo $account; ?>"><div class="top-account-item"><?php echo $text_account; ?></div></a>
 					
-					
-					
-					
 					<?php } else { ?>
-					<a href="<?php echo $register; ?>"><div class="top-account-item"><?php echo $text_register; ?></div></a>
-					<a href="<?php echo $login; ?>"><div class="top-account-item"><?php echo $text_login; ?></div></a>
+					<a href="<?php echo $register; ?>"><div class="top-account-item"><?php echo $text_register; ?></div></a><span>/</span>
+					<a href="<?php echo $login; ?>"><div class="top-account-item"><?php echo $text_login; ?></div></a> 
 					<?php } ?>
 				</div>
 
@@ -152,105 +141,108 @@
 						</div> -->
 						<?php echo $search; ?>
 					</div>
-					<div class="col-md-2 col-md-offset-1">
+					<div class="col-md-3 clock-md">
 						<div class="clock-item">
 							<div class="clock-img">
 								<img src="/catalog/view/theme/default/images/icon-clock.png">
 							</div>
 							<div class="clock-txt">
-								С 10:00 до 19:00<br>
-								Воскресенье : Выходной</div>
+								С<span> 10:00</span> до<span> 19:00</span><br>
+								Воскресенье : Выходной
 							</div>
+							</div>
+							<div class="clear"></div>
 							<div class="cart-icons">
-
+<!-- 
 								<a href="<?php echo $wishlist; ?>">
 									<div class='cart-icons-item'>
 										<img class='cart-icons-img' src="/catalog/view/theme/default/images/wishlist-icon-g.png">
 										<span id="wish"><?php echo $wishCount ?></spans>
 									</div>
-								</a>
+								</a> -->
 								<a href="/index.php?route=product/compare" >
 									<div class='cart-icons-item'>
-										<img class='cart-icons-img' src="/catalog/view/theme/default/images/compaire-icon-g.png">
+										<img class='cart-icons-img' src="/catalog/view/theme/default/images/compaire-icon-new.png">Сравнить
 										<span id="compare"><?php echo $compareCount ?></span>
 									</div>
 								</a>
 								<?php echo $cart; ?>
 							</div>
-						</div>
+						
 					</div>
-
 				</div>
 
 			</div>
 
 		</div>
-		<div id="nav">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-3">
-						<div id="catalog-button">
-							Категории
-							<div class="menu-div"><div></div><div></div><div></div></div>
-						</div>
-						<div id="catalog-button-mob">
-							Категории
-							<div class="menu-div"><div></div><div></div><div></div></div>
-						</div>
-						<div id="mobile-menu">
-						<?php foreach ($categories as $key => $cat): ?>
-									<a href="<?php echo $cat['href'] ?>">
-										<div class="category-menu-item" >
-											<p><?php echo $cat['name'] ?></p>
-											
-										</div>
-									</a>
-								<?php endforeach ?>
 
-							
-							<div class="category-menu-premium">
-								<a href="/index.php?route=product/special">
-									<div class="category-menu-item-premium">
-										<p>Акции</p>
-										<div class="category-arrow-premium">
-											<img src="/catalog/view/theme/default/images/prem1-g.png">
-										</div>
-										<div class="catalog-tria"></div>
-									</div>
-								</a>
-								<a href="http://avaks.tv/index.php?route=product/category&path=163">
-									<div class="category-menu-item-premium">
-										<p>Хиты продаж</p>
-										<div class="category-arrow-premium">
-											<img src="/catalog/view/theme/default/images/prem2-g.png">
-										</div>
-										<div class="catalog-tria"></div>
-									</div>
-								</a>
-								<a href="http://avaks.tv/index.php?route=product/category&path=164">
-									<div class="category-menu-item-premium">
-										<p>Распродажа</p>
-										<div class="category-arrow-premium">
-											<img src="/catalog/view/theme/default/images/prem3-g.png">
-										</div>
-										<div class="catalog-tria"></div>
-									</div>
-								</a>
-								<a href="http://avaks.tv/index.php?route=product/category&path=165">
-									<div class="category-menu-item-premium">
-										<p>Товар дня</p>
-										<div class="category-arrow-premium">
-											<img src="/catalog/view/theme/default/images/prem4-g.png">
-										</div>
-										<div class="catalog-tria"></div>
-									</div>
-								</a>
-								<div id="mobMenuClose">
-									Свернуть категории
+	</div>
+	<div id="nav">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div id="catalog-button">
+						Категории
+						<div class="menu-div"><div></div><div></div><div></div></div>
+					</div>
+					<div id="catalog-button-mob">
+						Категории
+						<div class="menu-div"><div></div><div></div><div></div></div>
+					</div>
+					<div id="mobile-menu">
+						<?php foreach ($categories as $key => $cat): ?>
+							<a href="<?php echo $cat['href'] ?>">
+								<div class="category-menu-item" >
+									<p><?php echo $cat['name'] ?></p>
+
 								</div>
+							</a>
+						<?php endforeach ?>
+
+
+						<div class="category-menu-premium">
+							<a href="/index.php?route=product/special">
+								<div class="category-menu-item-premium">
+									<p>Акции</p>
+									<div class="category-arrow-premium">
+										<img src="/catalog/view/theme/default/images/prem1-g.png">
+									</div>
+									<div class="catalog-tria"></div>
+								</div>
+							</a>
+							<a href="http://avaks.tv/index.php?route=product/category&path=163">
+								<div class="category-menu-item-premium">
+									<p>Хиты продаж</p>
+									<div class="category-arrow-premium">
+										<img src="/catalog/view/theme/default/images/prem2-g.png">
+									</div>
+									<div class="catalog-tria"></div>
+								</div>
+							</a>
+							<a href="http://avaks.tv/index.php?route=product/category&path=164">
+								<div class="category-menu-item-premium">
+									<p>Распродажа</p>
+									<div class="category-arrow-premium">
+										<img src="/catalog/view/theme/default/images/prem3-g.png">
+									</div>
+									<div class="catalog-tria"></div>
+								</div>
+							</a>
+							<a href="http://avaks.tv/index.php?route=product/category&path=165">
+								<div class="category-menu-item-premium">
+									<p>Товар дня</p>
+									<div class="category-arrow-premium">
+										<img src="/catalog/view/theme/default/images/prem4-g.png">
+									</div>
+									<div class="catalog-tria"></div>
+								</div>
+							</a>
+							<div id="mobMenuClose">
+								Свернуть категории
 							</div>
 						</div>
-						
+					</div>
+
 					<!-- </div> -->
 					<div id="mainMenu">
 						<div id="submenu2">
@@ -327,17 +319,17 @@
 							</div>
 						</div>
 					</div>	
-					</div>
-					<div class="col-md-9">
-						<ul class="super-menu-top">
-							<a href="/index.php?route=information/information&information_id=4"><li>О нас</li></a>
-							<a href="http://avaks.tv/index.php?route=information/information&information_id=10"><li>Оплата</li></a>
-							<a href="/index.php?route=information/information&information_id=6"><li>Доставка</li></a>
-							<a href="http://avaks.tv/index.php?route=information/information&information_id=9"><li>Гарантия</li></a>
-							<a href="/index.php?route=information/contact"><li>Контакты</li></a>
-							<a href="index.php?route=information/contact"><li>Обратная связь</li></a>
-						</ul>
-					</div>
+				</div>
+				<div class="col-md-9">
+					<ul class="super-menu-top">
+						<a href="/index.php?route=information/information&information_id=4"><li>О нас</li></a>
+						<a href="http://avaks.tv/index.php?route=information/information&information_id=10"><li>Оплата</li></a>
+						<a href="/index.php?route=information/information&information_id=6"><li>Доставка</li></a>
+						<a href="http://avaks.tv/index.php?route=information/information&information_id=9"><li>Гарантия</li></a>
+						<a href="/index.php?route=information/contact"><li>Контакты</li></a>
+						<a href="index.php?route=information/contact"><li>Обратная связь</li></a>
+					</ul>
 				</div>
 			</div>
 		</div>
+	</div>

@@ -52,17 +52,17 @@ document.addEventListener("DOMContentLoaded", function(){
 	}
 	
 
-	var iconsCartImg = document.getElementsByClassName('cart-icons-img');
-	for(i=0; i<iconsCartImg.length; i++){
-		iconsCartImg[i].addEventListener('mouseover', function(){
-			var oldSrc = this.src.substring(0, this.src.length - 5);
-			this.src = oldSrc + "b.png";
-		});
-		iconsCartImg[i].addEventListener('mouseout', function(){
-			var oldSrc = this.src.substring(0, this.src.length - 5);
-			this.src = oldSrc + "g.png";
-		});
-	};
+	// var iconsCartImg = document.getElementsByClassName('cart-icons-img');
+	// for(i=0; i<iconsCartImg.length; i++){
+	// 	iconsCartImg[i].addEventListener('mouseover', function(){
+	// 		var oldSrc = this.src.substring(0, this.src.length - 5);
+	// 		this.src = oldSrc + "b.png";
+	// 	});
+	// 	iconsCartImg[i].addEventListener('mouseout', function(){
+	// 		var oldSrc = this.src.substring(0, this.src.length - 5);
+	// 		this.src = oldSrc + "g.png";
+	// 	});
+	// };
 
 
 	var iconsPrem = document.getElementsByClassName('category-menu-item-premium');
