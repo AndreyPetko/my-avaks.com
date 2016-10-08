@@ -101,6 +101,7 @@ function occmAjaxPostAdd(uri, dataSet) {
 					} else if (2 == json['success']) {
 						if (confirm('<?php echo $z->l('Confirm buy one click') ?>')) {
 							occmAjaxPostAdd('<?php echo htmlspecialchars_decode($z->url->link('module/occm/add','&occ_customer=1','SSL')) ?>', '<?php echo $productSelectorPrefix ?> input[type=\'text\'], <?php echo $productSelectorPrefix ?> input[type=\'hidden\'], <?php echo $productSelectorPrefix ?> input[type=\'radio\']:checked, <?php echo $productSelectorPrefix ?> input[type=\'checkbox\']:checked, <?php echo $productSelectorPrefix ?> select, <?php echo $productSelectorPrefix ?> textarea');
+							alert('Ваш заказ успешно оформлен');
 						}
 					}
 				}
