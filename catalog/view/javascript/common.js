@@ -331,9 +331,6 @@ var compare = {
                     $('#compare-total').html(json['total']);
 
                     $('html, body').animate({ scrollTop: 0 }, 'slow');
-
-                    var compareCount = parseInt($('#compare').text());
-                    $('#compare').text(compareCount + 1);
                 }
             },
             error: function(xhr, ajaxOptions, thrownError) {

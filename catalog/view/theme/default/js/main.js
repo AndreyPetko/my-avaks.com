@@ -444,13 +444,26 @@ arrowUp.addEventListener('click', function(){
 
       })
     };
+
+
+
      for(i=0; i < toComp.length; i++){
       toComp[i].addEventListener('click', function(){
-        if(this.src == 'http://avaks.tv/catalog/view/theme/default/images/icon-to-comp-product-g.png'){
-          this.src = 'http://avaks.tv/catalog/view/theme/default/images/icon-to-comp-product-w.png';
+
+      	var pathArray = location.href.split( '/' );
+		var protocol = pathArray[0];
+		var host = pathArray[2];
+		var url = protocol + '//' + host;
+
+        if(this.src == url + '/catalog/view/theme/default/images/icon-to-comp-product-g.png'){
+        	var compareCount = parseInt($('#compare').text());
+        	$('#compare').text(compareCount + 1);
+          	this.src = url + '/catalog/view/theme/default/images/icon-to-comp-product-w.png';
         }
-        else{
-             this.src = 'http://avaks.tv/catalog/view/theme/default/images/icon-to-comp-product-g.png';
+        else {
+        	 var compareCount = parseInt($('#compare').text());
+        	 $('#compare').text(compareCount - 1);
+             this.src = url + '/catalog/view/theme/default/images/icon-to-comp-product-g.png';
         }
 
       })
