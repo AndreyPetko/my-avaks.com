@@ -90,11 +90,6 @@
 			</div>
 			<div class="col-md-9">
 				<?php echo $content_top; ?>
-				<div id="owl-demo4" class="owl-carousel owl-theme">
-					<div class="item"><img src="/catalog/view/theme/default/images/slider-item.jpg"></div>
-					<div class="item"><img src="/catalog/view/theme/default/images/slider-item.jpg"></div>
-					<div class="item"><img src="/catalog/view/theme/default/images/slider-item.jpg"></div>
-				</div> 
 
 				<div class="advantages">
 					<a href="/index.php?route=information/information&information_id=6">
