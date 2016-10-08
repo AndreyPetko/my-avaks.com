@@ -271,15 +271,15 @@ if(submenu2){
 			submenuItem2[i].addEventListener('mouseover', function(){
 				key = this.dataset.key;
 				showSubList2(key);
-				console.log(this);
+				// console.log(this);
 				var posIt = this.parentNode.parentNode.parentNode.parentNode.parentNode.getBoundingClientRect();
 				var posOfS = this.offsetTop;
 				var n = this.index;
-				console.log(n);
+				// console.log(n);
 				submenu2.style.top = (i * 38) + 'px';
 				submenu2.style.left =(posIt.right - posIt.left - 30) + 'px';
-				console.log(posIt);
-				console.log(submenu2.style.top);
+				// console.log(posIt);
+				// console.log(submenu2.style.top);
 			});
 			})(i);
 			
