@@ -471,7 +471,7 @@ $(document).ready(function() {
       itemsDesktop : [1000,5], //5 items between 1000px and 901px
       itemsDesktopSmall : [900,3], // betweem 900px and 601px
       itemsTablet: [600,2], //2 items between 600 and 0
-      itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
+     itemsMobile : [350,2] // itemsMobile disabled - inherit from itemsTablet option
   });
 	owl.trigger('owl.play',3000);
   // Custom Navigation Events
@@ -489,7 +489,7 @@ $(document).ready(function() {
       itemsDesktop : [1000,3], //5 items between 1000px and 901px
       itemsDesktopSmall : [900,2], // betweem 900px and 601px
       itemsTablet: [600,2], //2 items between 600 and 0
-      itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
+      itemsMobile : [350,1] // itemsMobile disabled - inherit from itemsTablet option
   });
   $(".next2").click(function(){
   	owl2.trigger('owl.next');
@@ -505,7 +505,7 @@ $(document).ready(function() {
       itemsDesktop : [1000,3], //5 items between 1000px and 901px
       itemsDesktopSmall : [900,2], // betweem 900px and 601px
       itemsTablet: [600,2], //2 items between 600 and 0
-      itemsMobile : true // itemsMobile disabled - inherit from itemsTablet option
+     itemsMobile : [350,1] // itemsMobile disabled - inherit from itemsTablet option
   });
   $(".next3").click(function(){
   	owl3.trigger('owl.next');
@@ -521,7 +521,7 @@ $(document).ready(function() {
       itemsDesktop : [1000,1], //5 items between 1000px and 901px
       itemsDesktopSmall : [900,1], // betweem 900px and 601px
       itemsTablet: [600,1], //2 items between 600 and 0
-      itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
+      itemsMobile : [350,1] // itemsMobile disabled - inherit from itemsTablet option
   });
   owl4.trigger('owl.play',4000);
 

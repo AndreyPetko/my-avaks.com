@@ -1804,6 +1804,10 @@ line-height: 20px;
  	.button-buy {
  		/*	width: auto;*/
  	}
+ 	.sort-view{
+ 		display: none;
+ 	}
+
  }
  @media(max-width:450px){
  	.phone{
@@ -1831,4 +1835,8 @@ line-height: 20px;
  	.footer-social-inside{
  		width: 60%;
  	}
+ 	.product-item-img{
+ 		min-height:110px;
+ 	}
+ 	
  }
