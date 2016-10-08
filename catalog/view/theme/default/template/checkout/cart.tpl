@@ -137,12 +137,12 @@
 
       <div class="form-group">
         <label for="name">Город</label>
-        <input type="text" required class="form-control" name="city" value=""/>
+        <input type="text" required class="form-control" name="city" value="<?php if(isset($user['city'])) echo $user['city'] ?>"/>
       </div>
 
       <div class="form-group">
         <label for="name">Адрес</label>
-        <input type="text" required class="form-control" name="address" value=""/>
+        <input type="text" required class="form-control" name="address" value="<?php if(isset($user['address'])) echo $user['address'] ?>"/>
       </div>
 
 

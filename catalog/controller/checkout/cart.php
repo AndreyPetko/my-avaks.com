@@ -262,6 +262,18 @@ class ControllerCheckoutCart extends Controller {
 				$data['user']['firstname'] = $this->customer->getFirstname();
 				$data['user']['lastname'] = $this->customer->getLastname();
 				$data['user']['telephone'] = $this->customer->getTelephone();
+				$data['user']['email'] = $this->customer->getEmail();
+
+				$addressId = $this->customer->getAddressId();
+
+				if($addressId) {
+					$result = $this->db->query("SELECT * FROM oc_address WHERE address_id = " . $addressId);
+					$address = $result->row;
+
+					$data['user']['address'] = $address['address_1'];
+					$data['user']['city'] = $address['city'];
+				}
+
 			}
 
 			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/cart.tpl')) {
