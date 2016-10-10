@@ -1432,7 +1432,47 @@ float: left;*/
 		/*height: 30px;*/
 		margin-top:5px;
 		text-indent: 10px;
+
 	}
+	.review-radio input[type="radio"] {
+    display:none;
+}
+.review-radio label {
+    display:inline-block;
+    background-color:#e4e9ee;
+    padding:4px 11px;
+    font-family:Arial;
+    font-size:16px;
+    cursor: pointer;
+    display: block;
+    float: left;
+    margin:2px;
+}
+
+.review-radio input[type="radio"]:checked + label {
+    background-color:#00519c;
+    color: white;
+}
+
+.review-radio p{
+	line-height: 20px;
+	float: left;
+	padding: 5px 25px;
+
+
+}
+.form-control-avaks{
+	height: 32px;
+}
+.review-radio p:first-child{
+	background-color: #f5f5f5;
+	float: left;
+	
+margin-right: 10px;
+}
+.review-radio{
+	margin:5px;
+}
 	.review-input textarea{
 		width: 100%;
 		border:1px solid #b0c1d1;
@@ -1787,6 +1827,9 @@ line-height: 20px;
 		}
 		.top-social{
 			width: 220px;
+		}
+		.review-radio p{
+			display: none;
 		}
 
 		/*.footer-social-inside{

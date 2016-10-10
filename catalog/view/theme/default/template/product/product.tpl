@@ -377,24 +377,27 @@
 												</div>
 												<div class="col-xs-8">
 													<div class="rate">
-														<div class="form-group required ">
+														<div class="form-group required review-radio">
 															<div class="col-sm-12">
-																<label class="control-label"><?php echo $entry_rating; ?></label>
-																&nbsp;&nbsp;&nbsp; <?php echo $entry_bad; ?>&nbsp;
-																<input type="radio" name="rating" value="1" />
-																&nbsp;
-																<input type="radio" name="rating" value="2" />
-																&nbsp;
-																<input type="radio" name="rating" value="3" />
-																&nbsp;
-																<input type="radio" name="rating" value="4" />
-																&nbsp;
-																<input type="radio" name="rating" value="5" />
-																&nbsp;<?php echo $entry_good; ?></div>
+																<p ><?php echo $entry_rating; ?></p>
+																 <p><?php echo $entry_bad; ?></p>
+																<input id="radio1" type="radio" name="rating" value="1" />
+																<label for="radio1">1</label>
+																<input id="radio2" type="radio" name="rating" value="2" />
+																<label for="radio2">2</label>
+																<input id="radio3" type="radio" name="rating" value="3" />
+																<label for="radio3">3</label>
+																<input id="radio4" type="radio" name="rating" value="4" />
+																<label for="radio4">4</label>
+																<input id="radio5" type="radio" name="rating" value="5" />
+																<label for="radio5">5</label>
+																<p><?php echo $entry_good; ?></p></div>
 															</div>
 														</div>
+														<hr>
 														<?php echo $captcha; ?> 
-														<div class="buttons clearfix">
+														
+														<div class="buttons clearfix review-radio">
 															<div class="pull-right">
 																<button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"><?php echo $button_continue; ?></button>
 															</div>
