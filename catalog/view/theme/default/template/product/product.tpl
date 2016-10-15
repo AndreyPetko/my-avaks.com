@@ -754,4 +754,6 @@
 					});
 				});
 			</script>
+			<link href="catalog/view/javascript/jquery/magnific/magnific-popup.css" type="text/css" rel="stylesheet" media="screen">
+<script src="catalog/view/javascript/jquery/magnific/jquery.magnific-popup.min.js" type="text/javascript"></script>
 			<?php echo $footer; ?>

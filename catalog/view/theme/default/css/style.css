@@ -60,6 +60,9 @@ a.list-group-item:hover{
 .btn {
 	border-radius: 2px;
 }
+.ui-widget-header{
+	background: #00417d!important;
+}
 
 /*------------- start header ---------------------*/
 .blue-line{
