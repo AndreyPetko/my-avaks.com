@@ -560,4 +560,27 @@ class ModelCatalogProduct extends Model {
 			return 0;
 		}
 	}
+
+	public function isShares($products)
+	{
+		$specialsId = $this->getSpecialsIds();
+
+		foreach ($products as &$product) {
+			$product['isShares'] = in_array($product['product_id'], $specialsId);
+		}
+
+		return $products;
+	}
+
+	private function getSpecialsIds()
+	{
+		$specialsId = [];
+		$specials = $this->model_catalog_product->getProductSpecials();
+
+		foreach ($specials as $special) {
+			$specialsId[] = $special['product_id'];
+		}
+
+		return $specialsId;
+	}
 }

@@ -8,11 +8,13 @@
       <div class="col-md-3 col-sm-6">
 
         <div class="product-item">
-         <div class="premium-product">
-         <div class="left-tria-prem"></div>
-           <p>Акция</p>
-           <img src="catalog/view/theme/default/images/prem1-w.png"">
-         </div>
+         <?php if($product['isShares']) { ?>
+           <div class="premium-product">
+            <div class="left-tria-prem"></div>
+              <p>Акция</p>
+              <img src="catalog/view/theme/default/images/prem1-w.png" "="">
+           </div>
+          <?php } ?>
          <div class="wish-comp-item">
           <?php if($product['in_wishlist']) { ?>
           <img class="toWish" onclick="wishlist.remove('<?php echo $product['product_id']; ?>');" src="/catalog/view/theme/default/images/icon-to-wish-product-w.png">

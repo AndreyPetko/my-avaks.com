@@ -185,6 +185,15 @@
                              <div class="item">
                               <div class="col-md-4 col-sm-6">
                                 <div class="product-item">
+
+                                <?php if($product['isShares']) { ?>
+                                <div class="premium-product">
+                                  <div class="left-tria-prem"></div>
+                                    <p>Акция</p>
+                                    <img src="catalog/view/theme/default/images/prem1-w.png" "="">
+                                 </div>
+                                 <?php } ?>
+
                                   <div class="wish-comp-item">
                                     <?php if($product['in_wishlist']) { ?>
                                     <img class="toWish" onclick="wishlist.add('<?php echo $product['product_id']; ?>');" src="/catalog/view/theme/default/images/icon-to-wish-product-w.png">

@@ -96,6 +96,8 @@ class ControllerModuleBestSeller extends Controller {
 				}
 			}
 
+			$data['products'] = $this->model_catalog_product->isShares($data['products']);
+
 			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/bestseller.tpl')) {
 				return $this->load->view($this->config->get('config_template') . '/template/module/bestseller.tpl', $data);
 			} else {
