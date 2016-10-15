@@ -861,6 +861,7 @@ class ModelCheckoutOrder extends Model {
 			", payment_address_1 = '" . $formData['address'] . "'" . 
 			", payment_method = '" . $formData['payment_method'] . "'" . 
 			", shipping_method = '" . $formData['shipping_method'] . "'" . 
+			", payment_postcode = '" . $formData['postcode'] . "'" . 
 			", order_status_id = 2" . 
 			', date_added = NOW()' .
 			', date_modified = NOW()' 

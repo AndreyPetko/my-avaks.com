@@ -145,6 +145,11 @@
         <input type="text" required class="form-control" name="address" value="<?php if(isset($user['address'])) echo $user['address'] ?>"/>
       </div>
 
+      <div class="form-group">
+        <label for="name">Индекс</label>
+        <input type="text" required class="form-control" name="postcode" value="<?php if(isset($user['postcode'])) echo $user['postcode'] ?>"/>
+      </div>
+
 
 <!--       <div class="form-group">
         <label for="name">Способ оплаты</label>
@@ -210,12 +215,6 @@
       </div>
 
       </form>
-
-
-
-
-
-      
 
       <script>
       $(document).ready(function() {

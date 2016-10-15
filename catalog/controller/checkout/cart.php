@@ -257,7 +257,6 @@ class ControllerCheckoutCart extends Controller {
 			$data['header'] = $this->load->controller('common/header');
 
 
-
 			if($this->customer->isLogged()) {
 				$data['user']['firstname'] = $this->customer->getFirstname();
 				$data['user']['lastname'] = $this->customer->getLastname();
@@ -272,6 +271,7 @@ class ControllerCheckoutCart extends Controller {
 
 					$data['user']['address'] = $address['address_1'];
 					$data['user']['city'] = $address['city'];
+					$data['user']['postcode'] = $address['postcode'];
 				}
 
 			}

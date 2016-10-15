@@ -70,8 +70,7 @@
 
                                   </div>
                                   </div>
-
-
+                                <?php } ?>
 
                                 <div class="filter-buttons">
                                   <div id="filter-submit">
@@ -83,8 +82,6 @@
                                     Обновить
                                   </div> -->
                                 </div>
-                            
-                              <?php } ?>
                                 </div>
                             </div>
 
