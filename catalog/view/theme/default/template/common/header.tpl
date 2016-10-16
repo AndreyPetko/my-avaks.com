@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="/catalog/view/theme/default/css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="/catalog/view/theme/default/bootstrap-jq/jquery.js"></script>
+	<script src="/catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="/catalog/view/theme/default/js/main.js"></script>
 	<script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
 	<script src="catalog/view/javascript/common.js" type="text/javascript"></script>
