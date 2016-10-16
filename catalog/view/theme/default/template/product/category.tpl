@@ -36,7 +36,7 @@
                 <div class="filter-item-content">
                   <div id="slider-range"></div>
                   <p>
-                    <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                    <input type="text" id="amount" readonly style=" border: 0!important;color: #00417d!important;margin: 10px 0!important;width: 100%!important;text-align: center!important;">
                     <input type="hidden" id="min" value="<?php echo $min_price_current; ?>" name="">
                     <input type="hidden" id="max" value="<?php echo $max_price_current; ?>" name="">
                   </p>
@@ -108,7 +108,7 @@
                               </div>
                               <?php } ?>
                             </div>
-                      
+
 
                             <?php } ?>
                             <?php if ($products) { ?>
@@ -211,146 +211,110 @@
                                     <img class="product-item-img" src="<?php echo $product['thumb']; ?>">
                                     <p><?php echo $product['name']; ?></p>
                                     <div class="product-item-price">
+                                     <?php if ($product['price']) { ?>
+                                      <?php if (!$product['special']) { ?>
                                       <?php echo $product['price']; ?>
-                                    </div>
-                                  </a>
-                                  <div class="button-buy" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
-                                    Купить
+                                      <?php } else { ?>
+                                      <span><?php echo $product['special']; ?></span><br> 
+                                      <span style="text-decoration: line-through;font-size: 12px;"><?php echo $product['price']; ?></span>
+                                      <?php } ?>
+                                      
+                                    <?php } ?>
                                   </div>
+                                </a>
+                                <div class="button-buy" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
+                                  Купить
                                 </div>
                               </div>
                             </div>
-                            <?php } ?>
-                            <?php } ?>
-                            <?php if (!$categories && !$products) { ?>
-                            <p><?php echo $text_empty; ?></p>
-                            <div class="buttons">
-                              <div class="pull-right"><a href="<?php echo $continue; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
-                            </div>
-                            <?php } ?>
+                          </div>
+                          <?php } ?>
+                          <?php } ?>
+                          <?php if (!$categories && !$products) { ?>
+                          <p><?php echo $text_empty; ?></p>
+                          <div class="buttons">
+                            <div class="pull-right"><a href="<?php echo $continue; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
+                          </div>
+                          <?php } ?>
 
-                          </div> 
-                        </div>
-                        <div class="pagination-div">
-                          <?php echo $pagination; ?>
-                        </div>
-
+                        </div> 
                       </div>
+                      <div class="pagination-div">
+                        <?php echo $pagination; ?>
+                      </div>
+
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
 
 
-              <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-              <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-              <script>
+            <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+            <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+            <script>
 
-                $(function() {
-                  $( "#slider-range" ).slider({
-                    range: true,
-                    min: <?php echo $min_price; ?>,
-                    max: <?php echo $max_price; ?>,
-                    values: [ <?php echo $min_price_current; ?>, <?php echo $max_price_current; ?> ],
-                    slide: function( event, ui ) {
-                      $( "#amount" ).val(  ui.values[ 0 ] + "р - " + ui.values[ 1 ] + "р");
-                      $('#min').val(ui.values[0]);
-                      $('#max').val(ui.values[1]);
-                    }
-                  });
-                  $( "#amount" ).val( $( "#slider-range" ).slider( "values", 0 ) + "р - " + $( "#slider-range" ).slider( "values", 1 ) + "р");
+              $(function() {
+                $( "#slider-range" ).slider({
+                  range: true,
+                  min: <?php echo $min_price; ?>,
+                  max: <?php echo $max_price; ?>,
+                  values: [ <?php echo $min_price_current; ?>, <?php echo $max_price_current; ?> ],
+                  slide: function( event, ui ) {
+                    $( "#amount" ).val(  ui.values[ 0 ] + "р - " + ui.values[ 1 ] + "р");
+                    $('#min').val(ui.values[0]);
+                    $('#max').val(ui.values[1]);
+                  }
                 });
+                $( "#amount" ).val( $( "#slider-range" ).slider( "values", 0 ) + "р - " + $( "#slider-range" ).slider( "values", 1 ) + "р");
+              });
 
-                function updateURLParameter(url, param, paramVal) {
-                  var newAdditionalURL = "";
-                  var tempArray = url.split("?");
-                  var baseURL = tempArray[0];
-                  var additionalURL = tempArray[1];
-                  var temp = "";
-                  if (additionalURL) {
-                    tempArray = additionalURL.split("&");
-                    for (i=0; i<tempArray.length; i++){
-                      if(tempArray[i].split('=')[0] != param){
-                        newAdditionalURL += temp + tempArray[i];
-                        temp = "&";
-                      }
+              function updateURLParameter(url, param, paramVal) {
+                var newAdditionalURL = "";
+                var tempArray = url.split("?");
+                var baseURL = tempArray[0];
+                var additionalURL = tempArray[1];
+                var temp = "";
+                if (additionalURL) {
+                  tempArray = additionalURL.split("&");
+                  for (i=0; i<tempArray.length; i++){
+                    if(tempArray[i].split('=')[0] != param){
+                      newAdditionalURL += temp + tempArray[i];
+                      temp = "&";
                     }
                   }
-
-                  var rows_txt = temp + "" + param + "=" + paramVal;
-                  return baseURL + "?" + newAdditionalURL + rows_txt;
                 }
 
-
-                document.addEventListener('DOMContentLoaded', function() {
-                  var submit = document.getElementById('filter-submit');
-
-                  var clearItems = document.getElementsByClassName('clear-fitler-block');
-
-                  for (var i = clearItems.length - 1; i >= 0; i--) {
-                    clearItems[i].addEventListener('click', function(){
-                      filterId = this.dataset.filterid;
+                var rows_txt = temp + "" + param + "=" + paramVal;
+                return baseURL + "?" + newAdditionalURL + rows_txt;
+              }
 
 
-                      var items = document.getElementsByName('filters');
-                      var filters = [];
+              document.addEventListener('DOMContentLoaded', function() {
+                var submit = document.getElementById('filter-submit');
 
-                      for (var i = items.length - 1; i >= 0; i--) {
-                        if(items[i].checked) {
-                          if(items[i].value != filterId) {
-                            filters.push(items[i].value);
-                          }
-                        }
-                      }
+                var clearItems = document.getElementsByClassName('clear-fitler-block');
 
-                      var filterStr = filters.join(',');
-                      var min = parseInt(document.getElementById('min').value);
-                      var max = parseInt(document.getElementById('max').value);
+                for (var i = clearItems.length - 1; i >= 0; i--) {
+                  clearItems[i].addEventListener('click', function(){
+                    filterId = this.dataset.filterid;
 
-                      newURL = updateURLParameter(window.location.href, 'filter', filterStr);
-                      newURL = updateURLParameter(newURL, 'page', 1);
-                      newURL = updateURLParameter(newURL, 'min', min);
-                      newURL = updateURLParameter(newURL, 'max', max);
-
-                      window.location.replace(newURL);
-                    });
-                  }
-
-
-
-                  submit.addEventListener('click', function() {
-                    var min = parseInt(document.getElementById('min').value);
-                    var max = parseInt(document.getElementById('max').value);
 
                     var items = document.getElementsByName('filters');
                     var filters = [];
 
                     for (var i = items.length - 1; i >= 0; i--) {
                       if(items[i].checked) {
-                        filters.push(items[i].value);
+                        if(items[i].value != filterId) {
+                          filters.push(items[i].value);
+                        }
                       }
                     }
 
                     var filterStr = filters.join(',');
-
-                    newURL = updateURLParameter(window.location.href, 'filter', filterStr);
-                    newURL = updateURLParameter(newURL, 'page', 1);
-                    newURL = updateURLParameter(newURL, 'min', min);
-                    newURL = updateURLParameter(newURL, 'max', max);
-
-                    window.location.replace(newURL);
-                  });
-
-
-
-                  clearAll = document.getElementById('clear-fitler-block-main');
-
-                  clearAll.addEventListener('click', function() {
                     var min = parseInt(document.getElementById('min').value);
                     var max = parseInt(document.getElementById('max').value);
 
-                    filterStr = '';
-
                     newURL = updateURLParameter(window.location.href, 'filter', filterStr);
                     newURL = updateURLParameter(newURL, 'page', 1);
                     newURL = updateURLParameter(newURL, 'min', min);
@@ -358,40 +322,84 @@
 
                     window.location.replace(newURL);
                   });
+                }
 
+
+
+                submit.addEventListener('click', function() {
+                  var min = parseInt(document.getElementById('min').value);
+                  var max = parseInt(document.getElementById('max').value);
+
+                  var items = document.getElementsByName('filters');
+                  var filters = [];
+
+                  for (var i = items.length - 1; i >= 0; i--) {
+                    if(items[i].checked) {
+                      filters.push(items[i].value);
+                    }
+                  }
+
+                  var filterStr = filters.join(',');
+
+                  newURL = updateURLParameter(window.location.href, 'filter', filterStr);
+                  newURL = updateURLParameter(newURL, 'page', 1);
+                  newURL = updateURLParameter(newURL, 'min', min);
+                  newURL = updateURLParameter(newURL, 'max', max);
+
+                  window.location.replace(newURL);
                 });
-              </script>
 
-              <script>
-                var buttonToTab = document.getElementById('sort-view-tb');
-                var buttonToList = document.getElementById('sort-view-sp');
-                var productItems = document.getElementsByClassName('product-item');
-                
 
-                
-                buttonToList.addEventListener('click', function(){
-                 for(i=0; i<productItems.length; i++){
-                  productItems[i].parentNode.classList.add('col-lg-12');
-                  productItems[i].parentNode.classList.remove("col-md-4", "col-sm-6");
-                  productItems[i].classList.add('product-item-list');
-                  productItems[i].style.minHeight = "180px";
-                  buttonToTab.getElementsByTagName('img')[0].src = "/catalog/view/theme/default/images/catalog-list1-g.png";
-                  buttonToList.getElementsByTagName('img')[0].src = "/catalog/view/theme/default/images/catalog-list2-b.png";
 
-                };
+                clearAll = document.getElementById('clear-fitler-block-main');
+
+                clearAll.addEventListener('click', function() {
+                  var min = parseInt(document.getElementById('min').value);
+                  var max = parseInt(document.getElementById('max').value);
+
+                  filterStr = '';
+
+                  newURL = updateURLParameter(window.location.href, 'filter', filterStr);
+                  newURL = updateURLParameter(newURL, 'page', 1);
+                  newURL = updateURLParameter(newURL, 'min', min);
+                  newURL = updateURLParameter(newURL, 'max', max);
+
+                  window.location.replace(newURL);
+                });
 
               });
-                buttonToTab.addEventListener('click', function(){
-                 for(i=0; i<productItems.length; i++){
-                  productItems[i].parentNode.classList.add("col-md-4", "col-sm-6");
-                  productItems[i].parentNode.classList.remove('col-lg-12');
-                  productItems[i].classList.remove('product-item-list');
-                  productItems[i].style.minHeight = "360px";
-                  buttonToTab.getElementsByTagName('img')[0].src = "/catalog/view/theme/default/images/catalog-list1-b.png";
-                  buttonToList.getElementsByTagName('img')[0].src = "/catalog/view/theme/default/images/catalog-list2-g.png";
-                };
-              });
-
-
             </script>
-            <?php echo $footer; ?>
+
+            <script>
+              var buttonToTab = document.getElementById('sort-view-tb');
+              var buttonToList = document.getElementById('sort-view-sp');
+              var productItems = document.getElementsByClassName('product-item');
+
+
+
+              buttonToList.addEventListener('click', function(){
+               for(i=0; i<productItems.length; i++){
+                productItems[i].parentNode.classList.add('col-lg-12');
+                productItems[i].parentNode.classList.remove("col-md-4", "col-sm-6");
+                productItems[i].classList.add('product-item-list');
+                productItems[i].style.minHeight = "180px";
+                buttonToTab.getElementsByTagName('img')[0].src = "/catalog/view/theme/default/images/catalog-list1-g.png";
+                buttonToList.getElementsByTagName('img')[0].src = "/catalog/view/theme/default/images/catalog-list2-b.png";
+
+              };
+
+            });
+              buttonToTab.addEventListener('click', function(){
+               for(i=0; i<productItems.length; i++){
+                productItems[i].parentNode.classList.add("col-md-4", "col-sm-6");
+                productItems[i].parentNode.classList.remove('col-lg-12');
+                productItems[i].classList.remove('product-item-list');
+                productItems[i].style.minHeight = "360px";
+                buttonToTab.getElementsByTagName('img')[0].src = "/catalog/view/theme/default/images/catalog-list1-b.png";
+                buttonToList.getElementsByTagName('img')[0].src = "/catalog/view/theme/default/images/catalog-list2-g.png";
+              };
+            });
+
+
+          </script>
+          <?php echo $footer; ?>

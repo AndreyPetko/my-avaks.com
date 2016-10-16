@@ -1,11 +1,18 @@
 <?php echo $header ?>
 
 <div class="container">
-	<ul class="breadcrumb">
-		<?php foreach ($breadcrumbs as $breadcrumb) { ?>
-			<li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-			<?php } ?>
-		</ul>
+	<div id="breadcrumps">
+    <a href="<?php echo $home; ?>">
+      <img src="/catalog/view/theme/default/images/home-icon-bread.jpg">
+      Главная
+    </a>
+    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+    <a href="<?php echo $breadcrumb['href']; ?>">
+      <img src="/catalog/view/theme/default/images/breadcr-arrow.jpg">
+      <?php echo $breadcrumb['text']; ?>
+    </a>
+    <?php } ?>
+  </div>
 		<div class="row">
 			<?php $class = 'col-sm-12'; ?>
 

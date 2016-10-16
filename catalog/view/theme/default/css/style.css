@@ -723,17 +723,19 @@ a.list-group-item:hover{
 	padding: 10px 0;
 	width: 90%;
 	margin: 0 auto;
-	height: 70px;
+	height: 50px;
 	overflow: hidden;
 	color: black;
 }
 .item .product-item-list p{
 	width: auto;
-	height: 110px;
+	height: 90px;
+	margin-top: 20px;
 }
 .product-item-price{
 	color: #00519c;
 	font-size: 18px;
+	height: 40px;
 }
 .product-item-list .product-item-price{
 	float: left;

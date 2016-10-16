@@ -37,9 +37,19 @@
             <a href="<?php echo $product['href']; ?>">
                 <img src="<?php echo $product['thumb']; ?>" class='product-item-img'>
                 <p><?php echo $product['name']; ?></p>
-                <div class="product-item-price">
-                  <?php echo $product['price']; ?>
-                </div>
+                   <div class="product-item-price">
+                   <?php if ($product['price']) { ?>
+                   <?php if (!$product['special']) { ?>
+                   <?php echo $product['price']; ?>
+                   <?php } else { ?>
+                   <span><?php echo $product['special']; ?></span><br> 
+                   <span style="text-decoration: line-through;font-size: 12px;"><?php echo $product['price']; ?></span>
+                   <?php } ?>
+                   <!--  <?php if ($product['tax']) { ?>-->
+                   <!-- <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>-->
+                   <?php } ?>
+                   <?php } ?>
+                 </div>
                  </a>
                 <div class="button-buy" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">
                   Купить

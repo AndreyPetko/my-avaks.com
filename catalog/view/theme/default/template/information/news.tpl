@@ -1,6 +1,6 @@
 <?php echo $header; ?>
 <div class="container">
-  <div id="breadcrumps">
+  <div id="breadcrumps" class="bread-news">
     <a href="/">
       <img src="/catalog/view/theme/default/images/home-icon-bread.jpg">
       Главная
@@ -12,6 +12,7 @@
     </a>
     <?php } ?>
   </div>
+
   <div class="row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>

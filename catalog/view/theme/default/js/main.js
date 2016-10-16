@@ -435,11 +435,16 @@ arrowUp.addEventListener('click', function(){
   if(toWish){
     for(i=0; i < toWish.length; i++){
       toWish[i].addEventListener('click', function(){
-        if(this.src == 'http://avaks.tv/catalog/view/theme/default/images/icon-to-wish-product-g.png'){
-          this.src = 'http://avaks.tv/catalog/view/theme/default/images/icon-to-wish-product-w.png';
+        if(this.src == 'http://avaks1.com/catalog/view/theme/default/images/icon-to-wish-product-g.png'){
+          this.src = 'http://avaks1.com/catalog/view/theme/default/images/icon-to-wish-product-w.png';
+          swal( "Вы добавили товар в список желаний");
+       
         }
         else{
-             this.src = 'http://avaks.tv/catalog/view/theme/default/images/icon-to-wish-product-g.png';
+             this.src = 'http://avaks1.com/catalog/view/theme/default/images/icon-to-wish-product-g.png';
+      
+
+
         }
 
       })
@@ -458,9 +463,12 @@ arrowUp.addEventListener('click', function(){
         if(this.src == url + '/catalog/view/theme/default/images/icon-to-comp-product-g.png'){
         	var compareCount = parseInt($('#compare').text());
         	if(compareCount == 4) {
-        		alert('Слишком много элементов в сравнении, уберите лишние на странице');
+        		swal('Слишком много элементов в сравнении, уберите лишние на странице');
         		return;
         	}
+        	else{
+        		       swal( "Вы добавили товар в список сравнений");
+        		   };
 
         	$('#compare').text(compareCount + 1);
           	this.src = url + '/catalog/view/theme/default/images/icon-to-comp-product-w.png';
@@ -469,6 +477,7 @@ arrowUp.addEventListener('click', function(){
         	 var compareCount = parseInt($('#compare').text());
         	 $('#compare').text(compareCount - 1);
              this.src = url + '/catalog/view/theme/default/images/icon-to-comp-product-g.png';
+
         }
 
       })
@@ -487,9 +496,11 @@ arrowUp.addEventListener('click', function(){
       	var toWishPrImg = this.getElementsByTagName('img')[0];
         if(toWishPrImg.src == 'http://avaks.tv/catalog/view/theme/default/images/wishlist-icon-b.png'){
           toWishPrImg.src = 'http://avaks.tv/catalog/view/theme/default/images/wishlist-icon-g.png';
+
         }
         else{
              toWishPrImg.src = 'http://avaks.tv/catalog/view/theme/default/images/wishlist-icon-b.png';
+               swal( "Вы добавили товар в список желаний");
 
         }
 
@@ -507,17 +518,22 @@ arrowUp.addEventListener('click', function(){
         if(toCompPrImg.src == url + '/catalog/view/theme/default/images/compaire-icon-g.png'){
         	var compareCount = parseInt($('#compare').text());
         	if(compareCount == 4) {
-        		alert('Слишком много элементов в сравнении, уберите лишние на странице');
+        		swal('Слишком много элементов в сравнении, уберите лишние на странице');
         		return;
         	}
+        	else{
+        		swal( "Вы добавили товар в список сравнений");
+        	};
 
         	$('#compare').text(compareCount + 1);
           	toCompPrImg.src = url + '/catalog/view/theme/default/images/compaire-icon-b.png';
+          	swal( "Вы добавили товар в список сравнений");
         }
         else {
         	 var compareCount = parseInt($('#compare').text());
         	 $('#compare').text(compareCount - 1);
              toCompPrImg.src = url + '/catalog/view/theme/default/images/compaire-icon-g.png';
+             
         }
 
       })

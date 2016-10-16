@@ -172,5 +172,7 @@
 <link rel="stylesheet" href="/catalog/view/theme/default/owl-carousel/owl.theme.css">
 <script src="/catalog/view/theme/default/owl-carousel/owl.carousel.js"></script>
 <link href="catalog/view/theme/default/css/social-likes_birman.css" type="text/css" rel="stylesheet" media="screen">
+<script src="/catalog/view/theme/default/css/sweetalert-master/dist/sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/catalog/view/theme/default/css/sweetalert-master/dist/sweetalert.css">
 </body>
 </html>

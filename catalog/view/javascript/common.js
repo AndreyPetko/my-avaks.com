@@ -171,6 +171,7 @@ var cart = {
                     }, 100);
 
                     $('html, body').animate({ scrollTop: 0 }, 'slow');
+                    swal("Успешно!", "Вы добавили товар в корзину", "success");
 
 
                     var cartCount = parseInt($('#cartCount').text());
@@ -296,6 +297,7 @@ var wishlist = {
                 if (json['success']) {
                     $('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
                 }
+            
 
                 $('#wishlist-total span').html(json['total']);
                 $('#wishlist-total').attr('title', json['total']);
@@ -327,9 +329,7 @@ var compare = {
 
                 if (json['success']) {
                     $('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
-
                     $('#compare-total').html(json['total']);
-
                     $('html, body').animate({ scrollTop: 0 }, 'slow');
                 }
             },
