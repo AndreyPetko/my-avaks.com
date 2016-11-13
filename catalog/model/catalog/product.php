@@ -119,7 +119,7 @@ class ModelCatalogProduct extends Model {
 
 
 		if(!empty($data['filter_min_price']) && !empty($data['filter_max_price'])) {
-			$sql .= " AND p.price < '" . $data['filter_max_price'] . "' AND  p.price > '" . $data['filter_min_price'] . "'";
+			$sql .= " AND p.price <= '" . $data['filter_max_price'] . "' AND  p.price >= '" . $data['filter_min_price'] . "'";
 		}
 
 		if (!empty($data['filter_category_id'])) {
